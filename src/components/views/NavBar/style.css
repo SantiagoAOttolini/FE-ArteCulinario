@@ -85,6 +85,14 @@
     padding: 10px 20px;
   }
 }
+.imgAvatar{
+  width: 40px;
+  height: 40px;
+}
 .titleNav{
     width: 170px;
+}
+.loginName{
+  height: 40px;
+  margin-bottom: 10px;
 }
