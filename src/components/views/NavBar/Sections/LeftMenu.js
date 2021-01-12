@@ -16,7 +16,7 @@ function LeftMenu(props) {
       <a href="/metabolicAnalyzer">Analizador metabolico</a>
     </Menu.Item>
     <Menu.Item key="controler">
-      <a href="/weightControler">Controlador de peso</a>
+      <a href="/weightControl">Controlador de peso</a>
     </Menu.Item>
     
   </Menu>
