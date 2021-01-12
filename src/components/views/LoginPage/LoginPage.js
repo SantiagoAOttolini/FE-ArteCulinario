@@ -5,7 +5,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
 import { useDispatch } from "react-redux";
-
+import "./style.css"
 const { Title } = Typography;
 
 function LoginPage(props) {
@@ -98,7 +98,7 @@ function LoginPage(props) {
                   }
                 />
                 {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
+                  <div className="inputFeedback">{errors.email}</div>
                 )}
               </Form.Item>
 
@@ -126,11 +126,11 @@ function LoginPage(props) {
 
               <Form.Item>
                 <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
+                <a href="/reset_user" style={{ float: 'right' }}>
                   forgot password
                   </a>
                 <div>
-                  <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
+                  <Button type="primary" htmlType="submit" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in
                 </Button>
                 </div>

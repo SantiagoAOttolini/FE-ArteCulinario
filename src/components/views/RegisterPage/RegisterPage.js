@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { registerUser } from "../../../_actions/user_actions";
 import { useDispatch } from "react-redux";
-
+import "./style.css"
 import {
   Form,
   Input,
@@ -114,7 +114,7 @@ function RegisterPage(props) {
                   }
                 />
                 {errors.name && touched.name && (
-                  <div className="input-feedback">{errors.name}</div>
+                  <div className="inputFeedback">{errors.name}</div>
                 )}
               </Form.Item>
 
@@ -131,7 +131,7 @@ function RegisterPage(props) {
                   }
                 />
                 {errors.lastName && touched.lastName && (
-                  <div className="input-feedback">{errors.lastName}</div>
+                  <div className="inputFeedback">{errors.lastName}</div>
                 )}
               </Form.Item>
 
@@ -148,7 +148,7 @@ function RegisterPage(props) {
                   }
                 />
                 {errors.email && touched.email && (
-                  <div className="input-feedback">{errors.email}</div>
+                  <div className="inputFeedback">{errors.email}</div>
                 )}
               </Form.Item>
 
@@ -165,7 +165,7 @@ function RegisterPage(props) {
                   }
                 />
                 {errors.password && touched.password && (
-                  <div className="input-feedback">{errors.password}</div>
+                  <div className="inputFeedback">{errors.password}</div>
                 )}
               </Form.Item>
 
@@ -182,7 +182,7 @@ function RegisterPage(props) {
                   }
                 />
                 {errors.confirmPassword && touched.confirmPassword && (
-                  <div className="input-feedback">{errors.confirmPassword}</div>
+                  <div className="inputFeedback">{errors.confirmPassword}</div>
                 )}
               </Form.Item>
 

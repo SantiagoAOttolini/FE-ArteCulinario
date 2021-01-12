@@ -1,0 +1,12 @@
+.app {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .inputFeedback {
+    color: red;
+    height: 5px;
+    margin-top: -12px;
+  }
