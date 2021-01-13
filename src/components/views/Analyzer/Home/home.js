@@ -46,81 +46,95 @@ class home extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xs-12 go-eat-quote">
-            <br />
-            Vamos a calcular tu{" "}
+      <div className="">
+        <div className="">
+          <div className="mt-5 d-flex justify-content-center">
+            <h4>Vamos a calcular tu </h4>
+            <p className="invisible">h</p>
             <a
               href="https://es.wikipedia.org/wiki/Metabolismo_basal"
               title="Basal metabolic rate"
             >
-              metabolismo basal
+              <h4 className="text-primary"> metabolismo basal</h4>
             </a>{" "}
-            y las calorias necesarias
+            <p className="invisible">h</p>
+            <h4>y las calorias necesarias</h4>
           </div>
         </div>
         <div className="row" style={{ height: "100%" }}>
           <div className="col-sm-3 col-md-4"></div>
           <div className="col-xs-12 col-sm-6 col-md-4">
             <div>
-              <div className="d-flex justify-content-center flex-column">
+              <div className="mt-5 form-control d-flex justify-content-center flex-column">
                 <input
-                  className="form-group"
-                  hintText="160"
-                  floatingLabelText="Altura (cm)"
-                  type="number"
+                  className="mt-5 mb-5 form-control form-control-lg"
+                  type="text"
+                  placeholder="Altura"
                   onChange={(e, value) => {
                     this.onDetailChange("height", value);
                   }}
                 />
                 <input
-                  hintText="70"
-                  floatingLabelText="Peso (kgs)"
-                  type="number"
+                  className="mb-5 form-control form-control-lg"
+                  type="text"
+                  placeholder="Peso"
                   onChange={(e, value) => {
                     this.onDetailChange("weight", value);
                   }}
                 />
                 <input
-                  hintText="18"
-                  floatingLabelText="Edad"
-                  type="number"
+                  className="form-control form-control-lg"
+                  type="text"
+                  placeholder="Edad"
                   onChange={(e, value) => {
                     this.onDetailChange("age", value);
                   }}
                 />
+
+                <div
+                  name="Genero"
+                  defaultSelected="Male"
+                  onChange={(e, value) => {
+                    this.onDetailChange("gender", value);
+                  }}
+                ></div>
+
+                <div className="mt-4 mb-4  d-flex justify-content-center">
+                  <div class="mr-4 form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="exampleRadios1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="exampleRadios1">
+                      Hombre
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="exampleRadios"
+                      id="exampleRadios2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="exampleRadios2">
+                      Mujer
+                    </label>
+                  </div>
+                </div>
               </div>
-              <div>Seleccione Genero: </div>
-              <br />
-              <div
-                name="Genero"
-                defaultSelected="Male"
-                onChange={(e, value) => {
-                  this.onDetailChange("gender", value);
-                }}
-              >
-                <input
-                  type="radio"
-                  value="Male"
-                  label="Hombre"
-                  style={{ color: "#C62828", padding: "5px" }}
-                />
-                <input
-                  type="radio"
-                  value="female"
-                  label="Mujer"
-                  style={{ color: "#C62828", padding: "5px" }}
-                />
-              </div>
-              <div>
-                <center>
-                  <button
-                    label="Calcular"
-                    primary={true}
-                    onClick={this.onCalculate.bind(this)}
-                  />
-                </center>
+              <div className="d-flex justify-content-center">
+                <button
+                  className="mt-5 btn btn-info"
+                  primary={true}
+                  onClick={this.onCalculate.bind(this)}
+                >
+                  Calcular
+                </button>
               </div>
             </div>
             {/*  <Snackbar
@@ -132,12 +146,8 @@ class home extends Component {
           </div>
           <div className="col-sm-3 col-md-4"></div>
         </div>
-        <div className="row">
-          <div className="col-xs-12 go-eat-quote">
-            <br />
-            <br />
-            {quotesFn()}
-          </div>
+        <div className="mt-5 d-flex justify-content-center">
+          <div className="col-xs-12 go-eat-quote"><h5>{quotesFn()}</h5></div>
         </div>
       </div>
     );
