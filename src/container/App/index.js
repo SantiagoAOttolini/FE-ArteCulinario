@@ -10,6 +10,7 @@ import forgotPassword from "../../components/views/Security Model/LoginPage/Forg
 import changePassword from "../../components/views/Security Model/LoginPage/ResetPassword";
 import weightControl from "../../components/views/Weight Control/Weight"
 import foodCompare from "../../components/views/Food Compare/Home"
+import analyzerMetabolic from "../../components/views/Analyzer/Home/home"
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -37,6 +38,7 @@ function App() {
             component={Auth(changePassword, true)}
           />
           <Route exact path="/weightControl" component={weightControl} />
+          <Route exact path="/analyzerMetabolic" component={analyzerMetabolic} />
         </Switch>
       </div>
     </Suspense>
