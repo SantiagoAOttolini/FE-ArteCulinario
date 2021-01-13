@@ -1,25 +1,25 @@
-import "react-app-polyfill/ie9";
-import "react-app-polyfill/ie11";
-import "core-js";
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./container/App/index";
-import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
-import thunk from "redux-thunk";
-import Reducer from "./_reducers";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import promiseMiddleware from "redux-promise";
-import ReduxThunk from "redux-thunk";
-const middleware = [thunk]; 
+import 'react-app-polyfill/ie9'
+import 'react-app-polyfill/ie11'
+import 'core-js'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './container/App/index'
+import * as serviceWorker from './serviceWorker'
+import { BrowserRouter } from 'react-router-dom'
+import thunk from 'redux-thunk'
+import Reducer from './_reducers'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import promiseMiddleware from 'redux-promise'
+import ReduxThunk from 'redux-thunk'
+const middleware = [thunk]
 const createStoreWithMiddleware = applyMiddleware(
-  ...middleware, 
+  ...middleware,
   promiseMiddleware,
   ReduxThunk
-)(createStore);
-
+)(createStore)
+/////////
 ReactDOM.render(
   <Provider
     store={createStoreWithMiddleware(
@@ -32,9 +32,9 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.unregister()
