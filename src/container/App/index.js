@@ -1,14 +1,15 @@
 import React, { Suspense } from "react";
 import { Route, Switch } from "react-router-dom";
-import Auth from "../hoc/auth";
+import Auth from "../../hoc/auth";
 // pages for this product
-import LandingPage from "./views/LandingPage/LandingPage.js";
-import LoginPage from "./views/LoginPage/LoginPage";
-import RegisterPage from "./views/RegisterPage/RegisterPage.js";
-import NavBar from "./views/NavBar/NavBar";
-import forgotPassword from "./views/LoginPage/ForgotPassword";
-import changePassword from "./views/LoginPage/ResetPassword";
-import weightControl from "./views/Weight Control/Weight"
+import LandingPage from "../../components/views/LandingPage/LandingPage.js";
+import LoginPage from "../../components/views/Security Model/LoginPage/LoginPage";
+import RegisterPage from "../../components/views/Security Model/RegisterPage/RegisterPage";
+import NavBar from "../../components/views/NavBar/NavBar";
+import forgotPassword from "../../components/views/Security Model/LoginPage/ForgotPassword";
+import changePassword from "../../components/views/Security Model/LoginPage/ResetPassword";
+import weightControl from "../../components/views/Weight Control/Weight"
+import foodCompare from "../../components/views/Food Compare/Home"
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
+          <Route exact path="/foodCompare" component={Auth(foodCompare, null)} />
           <Route
             exact
             path="/forgotPassword"
@@ -34,7 +36,7 @@ function App() {
             path="/changePassword"
             component={Auth(changePassword, true)}
           />
-          <Route exact path="/weightControl" component={Auth(weightControl, false)} />
+          <Route exact path="/weightControl" component={weightControl} />
         </Switch>
       </div>
     </Suspense>
