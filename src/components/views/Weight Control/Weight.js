@@ -40,7 +40,7 @@ class Index extends Component {
   render() {
     return (
       <div className="Index">
-        <h1>Calculadora de BMI</h1>
+        <h1 className="text-center">Calculadora de BMI</h1>
         <form>
           <div>
             <label>Altura</label>

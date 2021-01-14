@@ -1,30 +1,25 @@
-import React from 'react'
-import { Menu } from 'antd'
-const SubMenu = Menu.SubMenu
-const MenuItemGroup = Menu.ItemGroup
+import React from 'react';
+import { Menu } from 'antd';
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
 function LeftMenu(props) {
   return (
     <Menu mode={props.mode}>
-      <Menu.Item key='Start'>
-        <a href='/'>Inicio</a>
-      </Menu.Item>
-      <Menu.Item key='food'>
-        <a href='/foodCompare'>Comparador de alimento</a>
-      </Menu.Item>
-      <Menu.Item key='metabolic'>
-        <a href='/analyzerMetabolic'>Analizador metabolico</a>
-      </Menu.Item>
-      <Menu.Item key='controler'>
-        <a href='/weightControl'>Controlador de peso</a>
-      </Menu.Item>
-      <Menu.Item key='controler2'>
-        <a href='/bulking'>Ganador de masa muscular</a>
-      </Menu.Item>
-      <Menu.Item key='controler3'>
-        <a href='/cutting'>Reduccion de masa muscular</a>
-      </Menu.Item>
-    </Menu>
+    <Menu.Item key="Start">
+      <a href="/">Inicio</a>
+    </Menu.Item>
+    <Menu.Item key="food">
+      <a href="/foodCompare">Comparador de alimento</a>
+    </Menu.Item>
+    <Menu.Item key="metabolic">
+      <a href="/analyzerMetabolic">Analizador metabolico</a>
+    </Menu.Item>
+    <Menu.Item key="controler">
+      <a href="/weightControl">Controlador de peso</a>
+    </Menu.Item>
+    
+  </Menu>
   )
 }
 

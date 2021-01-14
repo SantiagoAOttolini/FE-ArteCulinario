@@ -1,8 +1,9 @@
-import { combineReducers } from 'redux'
-import user from './user_reducer'
+import { combineReducers } from "redux";
+import user from "./user_reducer";
+import BmrReducer from "./analyzer"
 
 const rootReducer = combineReducers({
-  user
-})
+  user, BmrReducer: BmrReducer
+});
 
-export default rootReducer
+export default rootReducer;
