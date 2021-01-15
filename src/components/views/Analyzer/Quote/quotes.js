@@ -10,7 +10,7 @@ let quotes = [
     'Cae siete veces, levantate ocho',
     'No hagas lo mismo siempre, si lo que buscas son resultados diferentes',
     'La mejor forma de predecir el futuro , es creándolo',
-    'Muchas personas afuera dirán que no puedes. Tu objetivo no depende de ti,no de ellos.',
+    'Muchas personas afuera dirán que no puedes. Tu objetivo depende de ti,no de ellos.',
     'Esfuerzate , las cosas grandes solo existen para personas grandes.',
     'Debes hacer lo que otros no hacen, para lograr lo que otros no pueden',
     'Eres lo que comes, obtienes lo que te esfuerzas',

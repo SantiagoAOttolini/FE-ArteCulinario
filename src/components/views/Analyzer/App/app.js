@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppAnalyzer from "../../../../container/App/index";
 import Body from "../Body/body";
 import Header from "../Header/header";
 import "./style.css";
@@ -24,8 +23,7 @@ class App extends Component {
         <MuiThemeProvider>
           <Header {...this.props}>
             <Body {...this.props} />
-            </Header>
-          
+            </Header>         
         </MuiThemeProvider>
       </BrowserRouter>
     );

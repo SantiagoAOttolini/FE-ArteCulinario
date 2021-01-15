@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import AppBar from '@material-ui/core/AppBar'
-import Drawer from '@material-ui/core/Drawer'
-import MenuItem from '@material-ui/core/MenuItem'
+import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
 import DropDownMenu from 'material-ui/DropDownMenu'
 import { bmrMultiplicationFactor } from '../Constants/constants'
 
@@ -80,7 +80,7 @@ class Header extends Component {
     return (
       <div className="av">
         <AppBar
-          title={'hola'}
+          title={'Analizador metabolico'}
           onLeftIconButtonTouchTap={this.handleToggle}
           iconElementRight={
             isInitialized ? (
@@ -100,7 +100,7 @@ class Header extends Component {
         >
           <MenuItem onClick={this.handleClose}>
             {' '}
-            <Link to='/analyzerMetabolic'>
+            <Link to='/home'>
               <div className='left-side-drawer-link'> Calcular calorias</div>{' '}
             </Link>{' '}
           </MenuItem>
