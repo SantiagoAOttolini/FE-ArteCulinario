@@ -5,7 +5,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./container/App/index";
-import AppAnalizer from "./components/views/Analyzer/App/app"
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import thunk from "redux-thunk";
@@ -34,7 +33,6 @@ ReactDOM.render(
   >
     <BrowserRouter>
       <App />
-      <AppAnalizer/>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
