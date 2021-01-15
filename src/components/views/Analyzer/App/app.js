@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React, { Component } from "react";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppAnalyzer from "../../../../container/App/index";
 import Body from "../Body/body";
-import Header from '../Header/header'
-import './style.css';
-import * as actionCreators from '../../../../_actions/types'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
+import Header from "../Header/header";
+import "./style.css";
+import * as actionCreators from "../../../../_actions/types";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 function mapStateToProps(state) {
-  return { BmrReducer: state.BmrReducer }
+  return { BmrReducer: state.BmrReducer };
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actionCreators, dispatch) }
+  return { actions: bindActionCreators(actionCreators, dispatch) };
 }
 
 class App extends Component {
@@ -21,11 +22,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <MuiThemeProvider>
-          <Header
-            {...this.props}>
-            <Body
-              {...this.props} />
-          </Header>
+          <Header {...this.props}>
+            <Body {...this.props} />
+            </Header>
+          
         </MuiThemeProvider>
       </BrowserRouter>
     );

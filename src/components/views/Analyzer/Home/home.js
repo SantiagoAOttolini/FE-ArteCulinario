@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import quotesFn from "../Quote/quotes";
+import "./style.css"
 
 class home extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class home extends Component {
     return (
       <div className="">
         <div className="">
-          <div className="mt-5 d-flex justify-content-center">
+          <div className="containerMetabolicBasal d-flex justify-content-center">
             <h4>Vamos a calcular tu </h4>
             <p className="invisible">h</p>
             <a
@@ -65,7 +66,7 @@ class home extends Component {
           <div className="col-sm-3 col-md-4"></div>
           <div className="col-xs-12 col-sm-6 col-md-4">
             <div>
-              <div className="mt-5 form-control d-flex justify-content-center flex-column">
+              <div className="containerHome form-control d-flex justify-content-center flex-column">
                 <input
                   className="mt-5 mb-5 form-control form-control-lg"
                   type="text"

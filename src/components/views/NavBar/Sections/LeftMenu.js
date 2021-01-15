@@ -13,7 +13,7 @@ function LeftMenu(props) {
       <a href="/foodCompare">Comparador de alimento</a>
     </Menu.Item>
     <Menu.Item key="metabolic">
-      <a href="/analyzerMetabolic">Analizador metabolico</a>
+      <a href="/home">Analizador metabolico</a>
     </Menu.Item>
     <Menu.Item key="controler">
       <a href="/weightControl">Controlador de peso</a>

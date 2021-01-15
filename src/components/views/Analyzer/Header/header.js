@@ -78,9 +78,9 @@ class Header extends Component {
       bmrValueRounded = Math.ceil(bmrValueModified)
     console.log(this.props.BmrReducer)
     return (
-      <div>
+      <div className="av">
         <AppBar
-          title={'Analizador Metabolico'}
+          title={'hola'}
           onLeftIconButtonTouchTap={this.handleToggle}
           iconElementRight={
             isInitialized ? (
