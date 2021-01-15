@@ -8,7 +8,7 @@ import FormLabel from '@material-ui/core/FormLabel'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
-import { UNITS, GENDER, LEVEL } from '../../constants/constants'
+import { UNITS, GENDER, LEVEL } from '../../Constants/constants'
 
 const styles = theme => ({
   control: {

@@ -11,6 +11,8 @@ import changePassword from '../../components/views/Security Model/LoginPage/Rese
 import weightControl from '../../components/views/Weight Control/Weight'
 import foodCompare from '../../components/views/Food Compare/Home'
 import brm from '../../components/views/Analyzer/pages/main/homepage'
+import Bulking from '../../components/views/Analyzer/Bulking/bulking'
+import Cutting from '../../components/views/Analyzer/Cutting/cutting'
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -45,6 +47,8 @@ class App extends Component {
               component={Auth(changePassword, true)}
             />
             <Route exact path='/weightControl' component={weightControl} />
+            <Route exact path='/bulking' component={Bulking} />
+            <Route exact path='/cutting' component={Cutting} />
             <Route exact path='/bmrCalculator' component={brm} />
           </div>
         </Suspense>
