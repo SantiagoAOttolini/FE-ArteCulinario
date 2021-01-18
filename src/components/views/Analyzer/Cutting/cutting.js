@@ -149,7 +149,7 @@ class Cutting extends Component {
               </li>
             </ul>
             <br></br>
-            <h3>Alimentos recomendados por |Cocinarte|</h3>
+            <h3>Alimentos recomendados por |Arte Culinario|</h3>
           </div>
           <div className='col-xs-12 col-md-8 col-lg-6'>
             <Chart options={options} />
