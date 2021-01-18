@@ -1,17 +1,16 @@
-import * as types  from '../_actions/types'
+import * as types from '../_actions/types'
 
-export const getProducts = () =>
-  dispatch =>
-    fetch(`products.json`)
-      .then(response => response.json())
-      .then(response => {
-        dispatch({
-          type: types.FETCH_PRODUCTS,
-          payload: response.products
-        })
+export const getProducts = () => dispatch =>
+  fetch(`http://localhost:5000/api/food`)
+    .then(response => response.json())
+    .then(data => {
+      dispatch({
+        type: types.FETCH_PRODUCTS,
+        payload: data
       })
+    })
 
 export const compare = product => ({
-    type: types.COMPARE_PRODUCT,
-    product
-  })
+  type: types.COMPARE_PRODUCT,
+  product
+})
