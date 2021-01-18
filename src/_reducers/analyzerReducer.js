@@ -6,6 +6,11 @@ const INITIAL_STATE = {
 
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case types.FETCH_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload
+      }
     case types.GET_BMR:
       return {
         ...state,
