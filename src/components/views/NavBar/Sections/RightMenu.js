@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { Menu } from 'antd';
-import axios from 'axios';
-import { USER_SERVER } from '../../Security Model/Config';
-import { withRouter } from 'react-router-dom';
-import { useSelector } from "react-redux";
-import "../style.css"
+import React from 'react'
+import { Menu } from 'antd'
+import axios from 'axios'
+import { USER_SERVER } from '../../Security Model/Config'
+import { withRouter } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import '../style.css'
 
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
@@ -16,12 +16,12 @@ function RightMenu(props) {
   const logoutHandler = () => {
     axios.get(`${USER_SERVER}/logout`).then(response => {
       if (response.status === 200) {
-        props.history.push("/login");
+        props.history.push('/login')
       } else {
         alert('Fallo el login')
       }
-    });
-  };
+    })
+  }
 
   if (user.userData && !user.userData.isAuth) {
     return (
@@ -42,6 +42,9 @@ function RightMenu(props) {
             <div className='loginName btn btn-info  text-white rounded h4 text-left'>
               <p>{user.userData && user.userData.name}</p>
             </div>
+            <div className='loginAccountType btn btn-info  text-white rounded h4 text-left'>
+              <p>{user.userData && user.userData.accountType}</p>
+            </div>
           </div>
         </Menu.Item>
 
@@ -49,7 +52,7 @@ function RightMenu(props) {
           title={
             <span>
               <img
-                className="imgAvatar"
+                className='imgAvatar'
                 id='userAvatar'
                 src={user.userData && user.userData.image}
               ></img>
@@ -72,5 +75,4 @@ function RightMenu(props) {
   }
 }
 
-export default withRouter(RightMenu);
-
+export default withRouter(RightMenu)

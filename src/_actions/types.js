@@ -13,3 +13,7 @@ export const MODIFY_BMR = 'MODIFY_BMR'
 
 ///////////ANALYZER//////////////////
 export const GET_BMR = 'get_bmr'
+
+//////////REWARDS/////////////////
+export const FETCH_REWARDS = 'FETCH_REWARDS'
+export const FILTER_REWARDS_BY_CATEGORY = 'FILTER_REWARDS_BY_CATEGORY'

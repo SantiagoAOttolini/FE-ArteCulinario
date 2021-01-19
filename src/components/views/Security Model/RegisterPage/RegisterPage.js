@@ -1,35 +1,36 @@
-import React from "react";
-import moment from "moment";
-import { Formik } from "formik";
-import * as Yup from "yup";
-import { registerUser } from "../../../../_actions/user_actions";
-import { useDispatch } from "react-redux";
-import "./style.css";
-import { Form, Input, Button } from "antd";
+import React from 'react'
+import moment from 'moment'
+import { Formik } from 'formik'
+import * as Yup from 'yup'
+import { registerUser } from '../../../../_actions/user_actions'
+import { useDispatch } from 'react-redux'
+import './style.css'
+import { Form, Input, Button } from 'antd'
 
 function RegisterPage(props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   return (
     <Formik
       initialValues={{
-        email: "",
-        lastName: "",
-        name: "",
-        password: "",
-        confirmPassword: "",
+        email: '',
+        lastName: '',
+        name: '',
+        password: '',
+        confirmPassword: '',
+        accountType: 'Cuenta gratuita'
       }}
       validationSchema={Yup.object().shape({
-        name: Yup.string().required("Name is required"),
-        lastName: Yup.string().required("Last Name is required"),
+        name: Yup.string().required('Name is required'),
+        lastName: Yup.string().required('Last Name is required'),
         email: Yup.string()
-          .email("Email is invalid")
-          .required("Email is required"),
+          .email('Email is invalid')
+          .required('Email is required'),
         password: Yup.string()
-          .min(6, "Password must be at least 6 characters")
-          .required("Password is required"),
+          .min(6, 'Password must be at least 6 characters')
+          .required('Password is required'),
         confirmPassword: Yup.string()
-          .oneOf([Yup.ref("password"), null], "Passwords must match")
-          .required("Confirm Password is required"),
+          .oneOf([Yup.ref('password'), null], 'Passwords must match')
+          .required('Confirm Password is required')
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -39,21 +40,22 @@ function RegisterPage(props) {
             name: values.name,
             lastname: values.lastname,
             image: `http://gravatar.com/avatar/${moment().unix()}?d=identicon`,
-          };
+            accountType: 'Cuenta gratuita'
+          }
 
-          dispatch(registerUser(dataToSubmit)).then((response) => {
+          dispatch(registerUser(dataToSubmit)).then(response => {
             if (response.payload.success) {
-              props.history.push("/login");
+              props.history.push('/login')
             } else {
-              alert(response.payload.err.errmsg);
+              alert(response.payload.err.errmsg)
             }
-          });
+          })
 
-          setSubmitting(false);
-        }, 500);
+          setSubmitting(false)
+        }, 500)
       }}
     >
-      {(props) => {
+      {props => {
         const {
           values,
           touched,
@@ -63,133 +65,130 @@ function RegisterPage(props) {
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset,
-        } = props;
+          handleReset
+        } = props
         return (
-          <div className="mt-5 d-flex justify-content-center flex-column">
-            <div className="mb-4 d-flex justify-content-center">
-              <h2 className="text-center">Registro</h2>
+          <div className='mt-5 d-flex justify-content-center flex-column'>
+            <div className='mb-4 d-flex justify-content-center'>
+              <h2 className='text-center'>Registro</h2>
             </div>
-            <div className="d-flex justify-content-center">
-              <Form
-               className="w-25"
-                onSubmit={handleSubmit}
-              >
-                <Form.Item required label="Name">
+            <div className='d-flex justify-content-center'>
+              <Form className='w-25' onSubmit={handleSubmit}>
+                <Form.Item required label='Name'>
                   <Input
-                    id="name"
-                    placeholder="Escribe tu nombre"
-                    type="text"
+                    id='name'
+                    placeholder='Escribe tu nombre'
+                    type='text'
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
                       errors.name && touched.name
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
                   />
                   {errors.name && touched.name && (
-                    <div className="inputFeedback">{errors.name}</div>
+                    <div className='inputFeedback'>{errors.name}</div>
                   )}
                 </Form.Item>
 
-                <Form.Item required label="Last Name">
+                <Form.Item required label='Last Name'>
                   <Input
-                    id="lastName"
-                    placeholder="Escribe tu apellido"
-                    type="text"
+                    id='lastName'
+                    placeholder='Escribe tu apellido'
+                    type='text'
                     value={values.lastName}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
                       errors.lastName && touched.lastName
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
                   />
                   {errors.lastName && touched.lastName && (
-                    <div className="inputFeedback">{errors.lastName}</div>
+                    <div className='inputFeedback'>{errors.lastName}</div>
                   )}
                 </Form.Item>
 
                 <Form.Item
                   required
-                  label="Email"
+                  label='Email'
                   hasFeedback
                   validateStatus={
-                    errors.email && touched.email ? "error" : "success"
+                    errors.email && touched.email ? 'error' : 'success'
                   }
                 >
                   <Input
-                    id="email"
-                    placeholder="Escribe tu mail"
-                    type="email"
+                    id='email'
+                    placeholder='Escribe tu mail'
+                    type='email'
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
                       errors.email && touched.email
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
                   />
                   {errors.email && touched.email && (
-                    <div className="inputFeedback">{errors.email}</div>
+                    <div className='inputFeedback'>{errors.email}</div>
                   )}
                 </Form.Item>
 
                 <Form.Item
                   required
-                  label="Password"
+                  label='Password'
                   hasFeedback
                   validateStatus={
-                    errors.password && touched.password ? "error" : "success"
+                    errors.password && touched.password ? 'error' : 'success'
                   }
                 >
                   <Input
-                    id="password"
-                    placeholder="Escribe tu contraseña"
-                    type="password"
+                    id='password'
+                    placeholder='Escribe tu contraseña'
+                    type='password'
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
                       errors.password && touched.password
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
                   />
                   {errors.password && touched.password && (
-                    <div className="inputFeedback">{errors.password}</div>
+                    <div className='inputFeedback'>{errors.password}</div>
                   )}
                 </Form.Item>
 
-                <Form.Item required label="Confirm" hasFeedback>
+                <Form.Item required label='Confirm' hasFeedback>
                   <Input
-                    id="confirmPassword"
-                    placeholder="Escribe nuevamente la contraseña"
-                    type="password"
+                    id='confirmPassword'
+                    placeholder='Escribe nuevamente la contraseña'
+                    type='password'
                     value={values.confirmPassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={
                       errors.confirmPassword && touched.confirmPassword
-                        ? "text-input error"
-                        : "text-input"
+                        ? 'text-input error'
+                        : 'text-input'
                     }
                   />
                   {errors.confirmPassword && touched.confirmPassword && (
-                    <div className="inputFeedback">
+                    <div className='inputFeedback'>
                       {errors.confirmPassword}
                     </div>
                   )}
                 </Form.Item>
-                <div className="d-flex justify-content-center">
+                <div className='d-flex justify-content-center'>
                   <Form.Item>
                     <Button
                       onClick={handleSubmit}
-                      type="primary"
+                      type='primary'
                       disabled={isSubmitting}
                     >
                       Enviar
@@ -199,10 +198,10 @@ function RegisterPage(props) {
               </Form>
             </div>
           </div>
-        );
+        )
       }}
     </Formik>
-  );
+  )
 }
 
-export default RegisterPage;
+export default RegisterPage

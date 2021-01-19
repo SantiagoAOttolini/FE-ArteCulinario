@@ -13,6 +13,8 @@ import foodCompare from '../../components/views/Food Compare/Home'
 import brm from '../../components/views/Analyzer/pages/main/homepage'
 import Bulking from '../../components/views/Analyzer/Bulking/bulking'
 import Cutting from '../../components/views/Analyzer/Cutting/cutting'
+import pays from '../../components/views/Pays/PricingHome'
+import Catalogrewards from '../../components/views/rewards/Catalog'
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -46,10 +48,20 @@ class App extends Component {
               path='/changePassword'
               component={Auth(changePassword, true)}
             />
-            <Route exact path='/weightControl' component={weightControl} />
-            <Route exact path='/bulking' component={Bulking} />
-            <Route exact path='/cutting' component={Cutting} />
-            <Route exact path='/bmrCalculator' component={brm} />
+            <Route
+              exact
+              path='/weightControl'
+              component={Auth(weightControl, true)}
+            />
+            <Route exact path='/bulking' component={Auth(Bulking, true)} />
+            <Route exact path='/cutting' component={Auth(Cutting, true)} />
+            <Route exact path='/bmrCalculator' component={Auth(brm, true)} />
+            <Route exact path='/Premium' component={Auth(pays, true)} />
+            <Route
+              exact
+              path='/Rewards'
+              component={Auth(Catalogrewards, true)}
+            />
           </div>
         </Suspense>
       </Switch>
