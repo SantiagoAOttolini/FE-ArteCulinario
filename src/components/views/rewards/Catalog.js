@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import RewardList from './RewardList'
 import Filter from './Filter'
 import { connect } from 'react-redux'
-import { filterRecipesByCategory } from '../../../_actions/recipe_actions'
+import { filterRewardsByCategory } from '../../../_actions/rewards_actions'
 
 class Catalog extends Component {
   render() {
@@ -17,9 +17,9 @@ class Catalog extends Component {
 }
 
 const mapStateToProps = state => ({
-  Rewards: state.Reward.items
+  rewards: state.Reward.items
 })
 
 export default connect(mapStateToProps, {
-  filterRecipesByCategory
+  filterRewardsByCategory
 })(Catalog)

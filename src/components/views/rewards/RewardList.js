@@ -17,9 +17,9 @@ class RewardList extends Component {
           <br></br>
           {/* end of title */}
           <div id='rowRecipes'>
-            {this.props.reward &&
-              this.props.reward.map(reward => (
-                <Reward key={reward.reward._id} reward={reward} />
+            {this.props.rewards &&
+              this.props.rewards.map(reward => (
+                <Reward key={reward._id} RReward={reward} />
               ))}
           </div>
         </div>

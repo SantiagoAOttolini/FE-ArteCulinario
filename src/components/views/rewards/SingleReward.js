@@ -9,7 +9,7 @@ class SingleReward extends Component {
     super(props)
     const id = this.props.match.params.id
     this.state = {
-      recipe: {},
+      reward: {},
       id,
       loading: true
     }
@@ -24,8 +24,8 @@ class SingleReward extends Component {
   }
 
   componentDidUpdate() {
-    if (!this.state.reward.name && this.props.reward) {
-      const detailReward = this.props.reward.find(
+    if (!this.state.reward.name && this.props.rewards) {
+      const detailReward = this.props.rewards.find(
         x => x._id.toString() === this.state.id.toString()
       )
 
@@ -40,7 +40,7 @@ class SingleReward extends Component {
 
   render() {
     const reward = this.state.reward
-    const id = this.state.reward._id
+    const id = this.state.reward.id
     console.log(id)
 
     if (this.state.loading) {
@@ -79,7 +79,7 @@ class SingleReward extends Component {
           {/* info */}
           <div className='d-flex justify-content-center mt-4'>
             <h3>
-              <strong>{recipe.description}</strong>
+              <strong>{reward.description}</strong>
             </h3>
           </div>
 
@@ -109,7 +109,7 @@ class SingleReward extends Component {
 }
 
 const mapStateToProps = state => ({
-  rewards: state.rewards.items
+  rewards: state.Reward.items
 })
 
 export default connect(mapStateToProps, {

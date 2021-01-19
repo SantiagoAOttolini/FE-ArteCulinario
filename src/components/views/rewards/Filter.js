@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { filterRecipesByCategory } from '../../../_actions/recipe_actions'
+import { filterRewardsByCategory } from '../../../_actions/rewards_actions'
 
 class Filter extends Component {
   render() {
     return (
       <div id='category-combobox-box'>
-        <label className="tex-center">
+        <label className='tex-center'>
           <select
-          className="form-control"
+            className='form-control'
             id='category-combobox'
             value={this.props.Category}
             onChange={e =>
-              this.props.filterRecipesByCategory(
+              this.props.filterRewardsByCategory(
                 this.props.recipes,
                 e.target.value
               )
@@ -33,9 +33,9 @@ class Filter extends Component {
 }
 
 const mapStateToProps = state => ({
-  recipes: state.recipe.items,
-  filteredRecipes: state.recipe.filteredItems,
-  Category: state.recipe.items.Category
+  rewards: state.Reward.items,
+  filteredRecipes: state.Reward.filteredItems,
+  Category: state.Reward.items.Category
 })
 
-export default connect(mapStateToProps, { filterRecipesByCategory })(Filter)
+export default connect(mapStateToProps, { filterRewardsByCategory })(Filter)

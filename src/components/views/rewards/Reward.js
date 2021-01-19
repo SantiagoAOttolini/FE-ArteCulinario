@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default class Reward extends Component {
   render() {
-    const reward = this.props.reward
+    const reward = this.props.RReward
     const rewardItems = (
       <div className='col-md-4' key={reward._id}>
         <div className='mb-5 thumbnail'>
@@ -14,7 +14,7 @@ export default class Reward extends Component {
             height='200'
           />
           <p className='text-nowrap'>{reward.name}</p>
-          <Link to={`/Recetas/${reward._id}`}>
+          <Link to={`/Reward/${reward._id}`}>
             <button className='btn btn-info  text-white rounded h5'>
               Detalles
             </button>
