@@ -16,7 +16,7 @@ export default class Reward extends Component {
           <p className='text-nowrap'>{reward.name}</p>
           <Link to={`/Reward/${reward._id}`}>
             <button className='btn btn-info  text-white rounded h5'>
-              Detalles
+              Ver beneficios disponibles
             </button>
           </Link>
         </div>

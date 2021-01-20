@@ -15,6 +15,7 @@ import Bulking from '../../components/views/Analyzer/Bulking/bulking'
 import Cutting from '../../components/views/Analyzer/Cutting/cutting'
 import pays from '../../components/views/Pays/PricingHome'
 import Catalogrewards from '../../components/views/rewards/Catalog'
+import SingleReward from '../../components/views/rewards/SingleReward'
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -61,6 +62,11 @@ class App extends Component {
               exact
               path='/Rewards'
               component={Auth(Catalogrewards, true)}
+            />
+            <Route
+              exact
+              path='/Reward/:id'
+              component={Auth(SingleReward, true)}
             />
           </div>
         </Suspense>

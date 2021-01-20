@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchRewards } from '../../../_actions/rewards_actions'
-import Favorite from './Favorite'
 
 class SingleReward extends Component {
   constructor(props) {
