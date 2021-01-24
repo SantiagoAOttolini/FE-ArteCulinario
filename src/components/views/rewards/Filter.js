@@ -13,18 +13,15 @@ class Filter extends Component {
             value={this.props.Category}
             onChange={e =>
               this.props.filterRewardsByCategory(
-                this.props.recipes,
+                this.props.rewards,
                 e.target.value
               )
             }
           >
             <option value=''>Elige una categoria</option>
-            <option value='Carnes'>Carnes</option>
-            <option value='Vegetariano'>Vegetariano</option>
-            <option value='Pizzas'>Pizzas</option>
-            <option value='Pastas'>Pastas</option>
-            <option value='Ensaladas'>Ensaladas</option>
-            <option value='Postres'>Postres</option>
+            <option value='Bar'>Bar</option>
+            <option value='Heladerias'>Heladerias</option>
+            <option value='Restaurantes'>Restaurantes</option>
           </select>
         </label>
       </div>

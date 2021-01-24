@@ -8,15 +8,15 @@ export const fetchRewards = () => dispatch => {
     })
 }
 
-export const filterRewardsByCategory = (recipes, category) => dispatch => {
+export const filterRewardsByCategory = (rewards, category) => dispatch => {
   return dispatch({
     type: FILTER_REWARDS_BY_CATEGORY,
     payload: {
       Category: category,
       items:
         category === ''
-          ? recipes
-          : recipes.filter(a => a.Category.indexOf(category) >= 0)
+          ? rewards
+          : rewards.filter(a => a.Category.indexOf(category) >= 0)
     }
   })
 }

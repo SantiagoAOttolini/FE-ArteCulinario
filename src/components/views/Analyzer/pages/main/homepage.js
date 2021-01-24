@@ -116,6 +116,9 @@ class HomePage extends React.Component {
     this.setState({
       totalCalories: stringScore
     })
+    this.setState({
+      Bmr: stringScore
+    })
   }
 
   render() {
@@ -193,7 +196,7 @@ HomePage.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  bmr: state.analyzer.bmr
+  Bmr: state.analyzer.bmr
 })
 
 export default connect(mapStateToProps, { get_bmr })(HomePage)

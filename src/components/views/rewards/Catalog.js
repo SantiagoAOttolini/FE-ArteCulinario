@@ -9,6 +9,7 @@ class Catalog extends Component {
     return (
       <>
         <h1 id='text-Category'>Catalogo de locales</h1>
+        <Filter></Filter>
         <RewardList />
         )}
       </>
