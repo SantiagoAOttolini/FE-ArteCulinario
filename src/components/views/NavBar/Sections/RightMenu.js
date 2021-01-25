@@ -42,7 +42,7 @@ function RightMenu(props) {
             <div className='loginName btn btn-info  text-white rounded h4 text-left'>
               <p>{user.userData && user.userData.name}</p>
             </div>
-            <div className='loginAccountType btn btn-info  text-white rounded h4 text-left'>
+            <div className='loginAccountType btn btn-info  text-white rounded h4 text-left ml-2'>
               <p>{user.userData && user.userData.accountType}</p>
             </div>
           </div>

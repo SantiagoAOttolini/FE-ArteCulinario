@@ -1,26 +1,27 @@
-import React, { Component } from 'react'
-import RewardList from './RewardList'
-import Filter from './Filter'
-import { connect } from 'react-redux'
-import { filterRewardsByCategory } from '../../../_actions/rewards_actions'
+import React, { Component } from "react";
+import RewardList from "./RewardList";
+import Filter from "./Filter";
+import { connect } from "react-redux";
+import { filterRewardsByCategory } from "../../../_actions/rewards_actions";
 
 class Catalog extends Component {
   render() {
     return (
-      <>
-        <h1 id='text-Category'>Catalogo de locales</h1>
+      <div>
+        <div className="d-flex justify-content-center mt-5">
+          <h2>Catalogo de locales</h2>
+        </div>
         <Filter></Filter>
-        <RewardList />
-        )}
-      </>
-    )
+        <RewardList />)
+      </div>
+    );
   }
 }
 
-const mapStateToProps = state => ({
-  rewards: state.Reward.items
-})
+const mapStateToProps = (state) => ({
+  rewards: state.Reward.items,
+});
 
 export default connect(mapStateToProps, {
-  filterRewardsByCategory
-})(Catalog)
+  filterRewardsByCategory,
+})(Catalog);

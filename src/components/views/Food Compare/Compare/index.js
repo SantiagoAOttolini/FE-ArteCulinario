@@ -85,16 +85,19 @@ const Compare = ({products}) => (
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.information}{" "}
-                <Link className="informacionAlimento" to={ `/informacion/${product.id}`}> Ver informacion</Link>      
+                <div className="btn btn-info">
+                <Link className="informacionAlimento text-light" to={ `/informacion/${product.id}`}> Ver informacion</Link>
+                </div>
+                      
               </td>
             ))}
           </tr>
         </tbody>
         
       </table>
-      <div>
+      <div className="d-flex justify-content-center mt-3 mb-3">
             <ReactHTMLTableToExcel
-             className="btnExcel"
+            className="btn btn-success"
              table="tablaAlimentos"
              filename="Planilla"
              sheet="pagina 1"

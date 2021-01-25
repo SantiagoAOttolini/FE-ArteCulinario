@@ -10,7 +10,7 @@ class RewardList extends Component {
   render() {
     return (
       <>
-        <div className='container py-5'>
+        <div className=''>
           {/* title */}
           <div id='rowTitle'></div>
           <br></br>

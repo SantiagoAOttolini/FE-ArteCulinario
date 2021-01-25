@@ -6,6 +6,7 @@ class Filter extends Component {
   render() {
     return (
       <div id='category-combobox-box'>
+        <div className=" d-flex justify-content-center">
         <label className='tex-center'>
           <select
             className='form-control'
@@ -24,6 +25,7 @@ class Filter extends Component {
             <option value='Restaurantes'>Restaurantes</option>
           </select>
         </label>
+        </div>
       </div>
     )
   }
