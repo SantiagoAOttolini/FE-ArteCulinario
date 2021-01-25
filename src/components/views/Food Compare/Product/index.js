@@ -7,7 +7,7 @@ const Product = ({ product, compare }) => (
       <img src={`http://localhost:5000/${product.photo}`} alt={product.name} />
       <div className='image_overlay' />
       <div className='view_details' onClick={() => compare(product)}>
-        {product.compare ? 'Remove' : 'Compare'}
+        {product.compare ? 'Eliminar' : 'Comparar'}
       </div>
       <div className='stats'>
         <div className='stats-container'>

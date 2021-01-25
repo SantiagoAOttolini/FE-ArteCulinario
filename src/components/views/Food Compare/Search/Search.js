@@ -6,14 +6,14 @@ class Search extends Component {
   render() {
     const { search, value } = this.props
     return (
-      <div id='containerRecipesText'>
+      <div>
         <div>
           <div>
             <form>
-              <label htmlFor='search' className='Search-Ingredients-Label'>
+              <label htmlFor='search'>
                 Ingrese un alimento...
               </label>
-              <div className='containerSerch Search-Ingredients-Textbox'>
+              <div className='containerSerch'>
                 <input
                   type='text'
                   name='search'

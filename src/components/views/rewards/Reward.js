@@ -28,6 +28,6 @@ export default class Reward extends Component {
       </div>
     );
 
-    return <div className="listOfRecipes">{rewardItems}</div>;
+    return <div>{rewardItems}</div>;
   }
 }
