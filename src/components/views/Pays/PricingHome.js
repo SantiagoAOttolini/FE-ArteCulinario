@@ -5,6 +5,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useSelector } from 'react-redux'
+import "./style.css"
 
 const PricingHome = props => {
   toast.configure()
@@ -14,7 +15,6 @@ const PricingHome = props => {
     price: 14,
     description: 'LLeva la pasion por la cocina, a otro nivel.'
   })
-
   const body = {
     user
   }
@@ -46,6 +46,8 @@ const PricingHome = props => {
       <div className='d-flex justify-content-center'>
         <h3>Oferta exclusiva: ${product.price}</h3>
       </div>
+      <div className="container imgPrice">
+      </div>
 
       <div className='d-flex justify-content-center container containerImg'></div>
       <div className='d-flex justify-content-center'>
@@ -55,7 +57,7 @@ const PricingHome = props => {
           stripeKey='pk_test_51IB2toIHFmBhTQLtHrSppZKrAtzBBx2H5DMU1oPetaXulzyi5BJQrVq3YzANFrYOfp2FocnbP4LwA2uL1E3dHPvV00ERf1p4tQ'
           token={handleToken}
           amount={product.price * 100}
-          name='|Cocinarte Premium|'
+          name='|Arte Culinario Premium|'
           billingAddress
         />
       </div>

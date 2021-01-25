@@ -12,44 +12,6 @@ import { CONSTANTS } from '../../Constants/constants'
 import { connect } from 'react-redux'
 import { get_bmr } from '../../../../../_actions/analyzer_actions'
 
-const styles = theme => ({
-  control: {
-    padding: '1em',
-    minHeight: '5em'
-  },
-  root: {
-    //background: '#A2A392',
-    paddingTop: '1em',
-    display: 'flex',
-    margin: '0 auto',
-    flexWrap: 'wrap',
-    maxWidth: '400px',
-    marginBottom: '1em'
-  },
-  group: {
-    margin: 'auto'
-  },
-  button: {
-    marginTop: '.75em'
-  },
-  logo: {
-    marginTop: '2.5em',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginBottom: '.5em',
-    width: '75px'
-  },
-  width: {
-    width: '100%'
-  },
-  sideMargin: {
-    marginLeft: '1.5em',
-    marginRight: '1.5em'
-  },
-  ico: {
-    transform: 'scale(1.75)'
-  }
-})
 
 class HomePage extends React.Component {
   /*
@@ -129,6 +91,7 @@ class HomePage extends React.Component {
 
       <div>
         <div className='mt-4'></div>
+        <div className="ml-4 mr-4 mb-5">
         <Paper>
           <Grid container spacing={24}>
             <Grid item xs={12}>
@@ -148,6 +111,8 @@ class HomePage extends React.Component {
             </Grid>
           </Grid>
         </Paper>
+        </div>
+       
 
         <RadioButtonField
           handleChange={this.handleChange}
@@ -162,7 +127,7 @@ class HomePage extends React.Component {
           height={this.state.height}
           age={this.state.age}
         />
-
+        <div className="d-flex justify-content-center mt-4">
         <Button
           variant='contained'
           size='large'
@@ -173,18 +138,25 @@ class HomePage extends React.Component {
         >
           Calcular
         </Button>
-        <div className='form-control form-control-lg btnLost mt-4'>
-          <button className='w-100 mb-2 btn btn-info'>
+        </div>
+        
+        <div className='d-flex justify-content-center btnLost mt-4'>
+          <button className='w-50 mb-2 btn btn-info'>
             <Link className='text-light' to='/bulking'>
               Aumentar masa muscular
             </Link>
           </button>
-          <button className='w-100 btn btn-info'>
+        </div>
+        <div className='d-flex justify-content-center'>
+          <button className='w-50 btn btn-info'>
             <Link className='text-light' to='/cutting'>
               Reducir grasa
             </Link>
           </button>
+          
         </div>
+        
+        
       </div>
     )
   }

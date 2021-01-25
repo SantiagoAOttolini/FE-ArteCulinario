@@ -8,6 +8,7 @@ import FormLabel from '@material-ui/core/FormLabel'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
+
 import { UNITS, GENDER, LEVEL } from '../../Constants/constants'
 
 const styles = theme => ({
@@ -39,6 +40,7 @@ function RadioButtonField(props) {
 
   return (
     <div className={classes.root}>
+      <div className="d-flex justify-content-center w-100 mb-5 containerRadio">
       <Paper className={classes.control}>
         <Grid container spacing={5}>
           <Grid item xs={6}>
@@ -107,6 +109,8 @@ function RadioButtonField(props) {
           </Grid>
         </Grid>
       </Paper>
+      </div>
+     
     </div>
   )
 }
