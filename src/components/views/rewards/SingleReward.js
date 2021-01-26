@@ -68,14 +68,6 @@ class SingleReward extends Component {
               alt='reward'
             />
           </div>
-          <div>
-            {/* <Favorite
-              userFrom={localStorage.getItem("userId")}
-              recipeId={id}
-              recipeInfo={recipe}
-            /> */}
-          </div>
-          {/* info */}
           <div className='d-flex justify-content-center mt-4'>
             <h3>
               <strong>{reward.description}</strong>

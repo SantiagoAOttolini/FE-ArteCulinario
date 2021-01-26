@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Products from "./products.json";
 import "./style.css";
+import { connect } from "react-redux";
+import { getProducts } from "../../../../_actions/product";
 
 class Informacion extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
     this.state = { product: {} };
   }
@@ -16,18 +16,59 @@ class Informacion extends Component {
     });
     this.setState({ product: product });
   }
+ 
+  const; */
+  constructor(props) {
+    super(props);
+    const id = this.props.match.params.id;
+    this.state = {
+      product: {},
+      id,
+      loading: true,
+    };
+  }
 
-  const;
+  async componentDidMount() {
+    try {
+      await this.props.getProducts();
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  componentDidUpdate() {
+    if (!this.state.product.name && this.props.Products) {
+      const detailProduct = this.props.Products.find(
+        (x) => x._id.toString() === this.state.id.toString()
+      );
+
+      if (detailProduct) {
+        this.setState({
+          product: detailProduct,
+          loading: false,
+        });
+      }
+    }
+  }
   render() {
-    console.log(Products);
+    const product = this.state.product;
+    const id = this.state.product.id;
+    console.log(id);
     return (
       <div className="infoAlimentos">
-        <h1>{this.state.product.name}</h1>
-        <p>{this.state.product.descripcion}</p>
+        <p>Hola</p>
+        <h1>{product.name}</h1>
+      {/*   <p>{this.state.product.descripcion}</p>
         <h1>{this.state.product.ventaja}</h1>
-        <p className="pro">{this.state.product.pro}</p>
+        <p className="pro">{this.state.product.pro}</p> */}
       </div>
     );
   }
 }
-export default Informacion;
+const mapStateToProps = (state) => ({
+  Products: state.product.products,
+});
+
+export default connect(mapStateToProps, {
+  getProducts,
+})(Informacion);

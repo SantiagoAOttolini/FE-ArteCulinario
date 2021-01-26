@@ -74,11 +74,3 @@ export default connect(
   })
 )(Home)
 
-/*<select name="OS">
-<option value="1"  onChange={this.serchHandler}>{products.id = "1"}</option>
-<option value="2">Windows 7</option>
-<option value="3">Windows XP</option>
-<option value="10">Fedora</option>
-<option value="11">Debian</option>
-<option value="12">Suse</option>
-</select>*/

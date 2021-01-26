@@ -86,9 +86,9 @@ const Compare = ({products}) => (
               <td key={product.id} className="text-center">
                 {product.information}{" "}
                 <div className="btn btn-info">
-                <Link className="informacionAlimento text-light" to={ `/informacion/${product.id}`}> Ver informacion</Link>
+                <Link className="informacionAlimento text-light" to={ `/information/${product._id}`}> Ver informacion</Link>
                 </div>
-                      
+                 
               </td>
             ))}
           </tr>
