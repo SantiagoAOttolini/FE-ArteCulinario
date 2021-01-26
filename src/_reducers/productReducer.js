@@ -23,6 +23,8 @@ export default function(state = INITIAL_STATE, action) {
             : product
         )
       }
+      case types.ADD_FOOD:
+        return {...state, addFood: action.payload }
     default:
       return state
   }

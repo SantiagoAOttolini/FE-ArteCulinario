@@ -5,6 +5,7 @@ import {
     AUTH_USER,
     LOGOUT_USER,
 } from './types';
+
 import { USER_SERVER } from '../components/views/Security Model/Config.js';
 
 export function registerUser(dataToSubmit){
