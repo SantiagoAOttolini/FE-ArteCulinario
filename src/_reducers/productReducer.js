@@ -1,7 +1,8 @@
 import * as types from '../_actions/types'
-import { ADD_FOOD } from '../_actions/types'
+import { ADD_FOOD, DELETE_FOOD } from '../_actions/types'
 const INITIAL_STATE = {
-  products: []
+  products: [],
+  isLoading: false
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -25,6 +26,20 @@ export default function(state = INITIAL_STATE, action) {
       }
     case ADD_FOOD:
       return { ...state, addFood: action.payload }
+
+    case DELETE_FOOD:
+      console.log(action.payload)
+      const newProducts = [...state.products]
+      const productToDelete = newProducts.findIndex(
+        ele => ele._id === action.payload._id
+      )
+
+      newProducts.splice(productToDelete, 1)
+      return {
+        ...state,
+        isLoading: false,
+        products: newProducts
+      }
     default:
       return state
   }

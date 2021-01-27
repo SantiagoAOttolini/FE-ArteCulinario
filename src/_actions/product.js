@@ -1,6 +1,6 @@
 import * as types from '../_actions/types'
 import axios from 'axios'
-import { ADD_FOOD } from './types'
+import { ADD_FOOD, DELETE_FOOD } from './types'
 
 export const getProducts = () => dispatch =>
   fetch(`http://localhost:5000/api/food`)
@@ -25,5 +25,32 @@ export function addFood(dataToSubmit) {
   return {
     type: ADD_FOOD,
     payload: request
+  }
+}
+
+//DELETE THE PRODUCTS
+export const deleteProduct = code => {
+  return dispatch => {
+    const options = {
+      timeout: 25000,
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    return fetch(`http://localhost:5000/api/food/${code}`, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log('DELETE PRODUCT', data)
+        if (!Object.entries(data).length) {
+          return Promise.reject(data)
+        }
+
+        return dispatch({
+          type: DELETE_FOOD,
+          payload: data
+        })
+      })
   }
 }

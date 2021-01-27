@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { deleteProduct } from '../../../../_actions/product'
 import './styles.css'
 
 const Product = ({ product, compare }) => (
@@ -15,7 +17,19 @@ const Product = ({ product, compare }) => (
         </div>
       </div>
     </div>
+    <button
+      className='btn btn-danger btn-xs'
+      onClick={() => this.deleteProduct(product._id)}
+    >
+      Eliminar Alimento
+    </button>
   </div>
 )
 
-export default Product
+const mapStateToProps = state => ({
+  products: state.product.products
+})
+
+export default connect(mapStateToProps, {
+  deleteProduct
+})(Product)
