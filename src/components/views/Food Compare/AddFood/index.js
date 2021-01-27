@@ -132,7 +132,7 @@ function AddFood(props) {
                   )}
                 </Form.Item>
 
-                <Form.Item required label="Valor">
+                <Form.Item required label="Valor energetico (Cal)">
                   <Input
                     id="valor"
                     placeholder="Escribe el valor de las calorias"

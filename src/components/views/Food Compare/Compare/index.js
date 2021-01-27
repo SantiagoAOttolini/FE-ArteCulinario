@@ -17,7 +17,7 @@ const Compare = ({products}) => (
         </thead>
         <tbody>
           <tr className="valor">
-            <th scope="row">Valor energetico</th>
+            <th scope="row">Valor energetico (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.valor}
@@ -25,7 +25,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="carbs">
-            <th scope="row">Carbohidratos</th>
+            <th scope="row">Carbohidratos (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.carbs}
@@ -33,7 +33,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="protein">
-            <th scope="row">Proteinas</th>
+            <th scope="row">Proteinas (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.protein}
@@ -41,7 +41,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="grease1">
-            <th scope="row">Grasas totales</th>
+            <th scope="row">Grasas insaturadas (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.grease1}
@@ -49,7 +49,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="grease2">
-            <th scope="row">Grasas saturadas</th>
+            <th scope="row">Grasas saturadas (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.grease2}
@@ -57,7 +57,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="grease3">
-            <th scope="row">Grasas trans</th>
+            <th scope="row">Grasas trans (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.grease3}
@@ -65,7 +65,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="fiber">
-            <th scope="row">Fibra alimentaria</th>
+            <th scope="row">Fibra alimentaria (g)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.fiber}
@@ -73,7 +73,7 @@ const Compare = ({products}) => (
             ))}
           </tr>
           <tr className="sodium">
-            <th scope="row">Sodio</th>
+            <th scope="row">Sodio (mg)</th>
             {products.map((product) => (
               <td key={product.id} className="text-center">
                 {product.sodium}

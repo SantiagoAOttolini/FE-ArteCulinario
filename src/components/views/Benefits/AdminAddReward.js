@@ -39,7 +39,14 @@ function AddReward(props) {
             Location: values.Location,
             HoursOfAtention: values.HoursOfAtention,
             description: values.description,
-            Category: values.Category
+            Category: values.Category,
+            ComboUno:values.ComboUno,
+            ComboDos:values.ComboDos,
+            ComboTres:values.ComboTres,
+            cmbDescripcionUno: values.cmbDescripcionUno,
+            cmbDescripcionDos: values.cmbDescripcionDos,
+            cmbDescripcionTres: values.cmbDescripcionTres
+
           }
 
           dispatch(addReward(dataToSubmit)).then(response => {
@@ -188,7 +195,114 @@ function AddReward(props) {
                     <div className='inputFeedback'>{errors.Category}</div>
                   )}
                 </Form.Item>
-
+                <Form.Item required label='Combo uno'>
+                  <Input
+                    id='ComboUno'
+                    placeholder='Escribe la direccion de la imagen'
+                    type='text'
+                    value={values.ComboUno}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.ComboUno && touched.ComboUno
+                        ? 'text-input error'
+                        : 'text-input'
+                    }
+                  />
+                  {errors.ComboUno && touched.ComboUno && (
+                    <div className='inputFeedback'>{errors.ComboUno}</div>
+                  )}
+                </Form.Item>
+                <Form.Item required label='Combo dos'>
+                  <Input
+                    id='ComboDos'
+                    placeholder='Escribe la direccion de la imagen'
+                    type='text'
+                    value={values.ComboDos}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.ComboDos && touched.ComboDos
+                        ? 'text-input error'
+                        : 'text-input'
+                    }
+                  />
+                  {errors.ComboDos && touched.ComboDos && (
+                    <div className='inputFeedback'>{errors.ComboDos}</div>
+                  )}
+                </Form.Item>
+                <Form.Item required label='Combo tres'>
+                  <Input
+                    id='ComboTres'
+                    placeholder='Escribe la direccion de la imagen'
+                    type='text'
+                    value={values.ComboTres}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.ComboTres && touched.ComboTres
+                        ? 'text-input error'
+                        : 'text-input'
+                    }
+                  />
+                  {errors.ComboTres && touched.ComboTres && (
+                    <div className='inputFeedback'>{errors.ComboTres}</div>
+                  )}
+                </Form.Item>
+                <Form.Item required label='Descripcion combo uno'>
+                  <Input
+                    id='cmbDescripcionUno'
+                    placeholder='Escribe la despricion del combo'
+                    type='text'
+                    value={values.cmbDescripcionUno}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.cmbDescripcionUno && touched.cmbDescripcionUno
+                        ? 'text-input error'
+                        : 'text-input'
+                    }
+                  />
+                  {errors.cmbDescripcionUno && touched.cmbDescripcionUno && (
+                    <div className='inputFeedback'>{errors.cmbDescripcionUno}</div>
+                  )}
+                </Form.Item>
+                <Form.Item required label='Descripcion combo dos'>
+                  <Input
+                    id='cmbDescripcionDos'
+                    placeholder='Escribe la despricion del combo'
+                    type='text'
+                    value={values.cmbDescripcionDos}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.cmbDescripcionDos && touched.cmbDescripcionDos
+                        ? 'text-input error'
+                        : 'text-input'
+                    }
+                  />
+                  {errors.cmbDescripcionDos && touched.cmbDescripcionDos && (
+                    <div className='inputFeedback'>{errors.cmbDescripcionDos}</div>
+                  )}
+                </Form.Item>
+                <Form.Item required label='Descripcion combo tres'>
+                  <Input
+                    id='cmbDescripcionTres'
+                    placeholder='Escribe la despricion del combo'
+                    type='text'
+                    value={values.cmbDescripcionTres}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={
+                      errors.cmbDescripcionTres && touched.cmbDescripcionTres
+                        ? 'text-input error'
+                        : 'text-input'
+                    }
+                  />
+                  {errors.cmbDescripcionTres && touched.cmbDescripcionTres && (
+                    <div className='inputFeedback'>{errors.cmbDescripcionTres}</div>
+                  )}
+                </Form.Item>
                 <div className='d-flex justify-content-center'>
                   <Form.Item>
                     <Button

@@ -14,14 +14,14 @@ import brm from '../../components/views/Analyzer/pages/main/homepage'
 import Bulking from '../../components/views/Analyzer/Bulking/bulking'
 import Cutting from '../../components/views/Analyzer/Cutting/cutting'
 import pays from '../../components/views/Pays/PricingHome'
-import Catalogrewards from '../../components/views/rewards/Catalog'
-import SingleReward from '../../components/views/rewards/SingleReward'
+import Catalogrewards from '../../components/views/Benefits/Catalog'
+import SingleReward from '../../components/views/Benefits/SingleReward'
 import Information from '../../components/views/Food Compare/Informacion/index'
 import AddFood from '../../components/views/Food Compare/AddFood/index'
-import AddReward from '../../components/views/rewards/AdminAddReward'
+import AddReward from '../../components/views/Benefits/AdminAddReward'
 import Auditory from '../../components/views/Auditory/index'
 import Backup from '../../components/views/Backup/index'
-import Benefits from "../../components/views/rewards/Benefits"
+import Benefits from "../../components/views/Benefits/Benefits"
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside

@@ -59,6 +59,9 @@ class Informacion extends Component {
         <div className="mt-5 d-flex justify-content-center">
           <h1 className="titleName text-center rounded">{product.name}</h1>
         </div>
+        <div className="mt-2 d-flex justify-content-center">
+        <img src={`http://localhost:5000/${product.photo}`}></img>
+        </div>
         <div className="textDescription d-flex justify-content-center">
           <h5>{product.description}</h5>
         </div>

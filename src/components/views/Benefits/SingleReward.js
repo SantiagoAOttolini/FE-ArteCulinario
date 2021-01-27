@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchRewards } from "../../../_actions/rewards_actions";
 import "./style.css";
+
 class SingleReward extends Component {
   constructor(props) {
     super(props);
@@ -57,7 +58,9 @@ class SingleReward extends Component {
       <div>
         <div className="container mt-3">
           <div className="d-flex justify-content-center">
-            <h4 className="titleBenefits text-center rounded mt-3">{reward.name}</h4>
+            <h4 className="titleBenefits text-center rounded mt-3">
+              {reward.name}
+            </h4>
           </div>
           <div className="d-flex justify-content-center">
             <img
@@ -78,20 +81,61 @@ class SingleReward extends Component {
             <h5>{reward.Location}</h5>
           </div>
           <div className="d-flex justify-content-center mt-2">
-            <h4 className="text-center rounded titleAtributtes">Horario de atencion</h4>
+            <h4 className="text-center rounded titleAtributtes">
+              Horario de atencion
+            </h4>
           </div>
           <div className="d-flex justify-content-center">
             <h5>{reward.HoursOfAtention}</h5>
           </div>
-          <div className="d-flex justify-content-center mt-5">
-            <h4 className="text-center rounded titleCategoria">
-              Categoria de la receta
-            </h4>
+          <div className="d-flex justify-content-center mt-2">
+            <h4 className="text-center rounded titleAtributtes">Combos</h4>
           </div>
           <div className="d-flex justify-content-center">
-            <h4>
-              <strong>{reward.Category}</strong>
-            </h4>
+            <div>
+              <h5 className="text-center">Combo uno</h5>
+              <img
+                className="mr-2"
+                width="248"
+                height="200"
+                src={`http://localhost:5000/${reward.ComboUno}`}
+              ></img>
+            </div>
+            <div>
+              <h5 className="text-center">Combo dos</h5>{" "}
+              <img
+                className="mr-2"
+                width="248"
+                height="200"
+                src={`http://localhost:5000/${reward.ComboDos}`}
+              ></img>
+            </div>
+            <div>
+              <h5 className="text-center">Combo tres</h5>{" "}
+              <img
+                width="248"
+                height="200"
+                src={`http://localhost:5000/${reward.ComboTres}`}
+              ></img>
+            </div>
+          </div>
+          <div className="mt-4 d-flex justify-content-center">
+            <h5 className="text-center">Combo Uno</h5>{" "}
+          </div>
+          <div className="d-flex justify-content-center">
+            <p>{reward.cmbDescripcionUno}</p>
+          </div>
+          <div className="d-flex justify-content-center">
+            <h5 className="text-center">Combo Dos</h5>{" "}
+          </div>
+          <div className="d-flex justify-content-center">
+            <p>{reward.cmbDescripcionDos}</p>
+          </div>
+          <div className="d-flex justify-content-center">
+            <h5 className="text-center">Combo Tres</h5>{" "}
+          </div>
+          <div className="d-flex justify-content-center">
+            <p>{reward.cmbDescripcionTres}</p>
           </div>
           <div className="d-flex justify-content-center">
             {
