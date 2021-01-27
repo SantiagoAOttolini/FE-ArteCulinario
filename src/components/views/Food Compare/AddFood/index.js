@@ -17,7 +17,7 @@ function AddFood(props) {
         valor: "",
         carbs: "",
         protein: "",
-        grease1: "Cuenta gratuita",
+        grease1: "",
         grease2: "",
         grease3: "",
         fiber: "",
@@ -29,7 +29,7 @@ function AddFood(props) {
       validationSchema={Yup.object().shape({
         photo: Yup.string().required("Una foto es requerida"),
         name: Yup.string().required("El nombre es requerido"),
-        valor: Yup.string().required("El valor es requerido"),
+        valor: Yup.string().required("El valor energetico es requerido"),
         carbs: Yup.string().required("El valor del carboidrato es requerido"),
         protein: Yup.string().required("El valor de la proteina es requerido"),
         grease1: Yup.string().required("El valor de la grasa es requerido"),
@@ -54,13 +54,13 @@ function AddFood(props) {
             carbs: values.carbs,
             protein: values.protein,
             grease1: values.grease1,
-            grease2: value.grease2,
-            grease3: value.grease3,
-            fiber: value.fiber,
-            sodium: value.sodium,
-            adventages: value.adventages,
-            description: value.description,
-            Category: value.Category,
+            grease2: values.grease2,
+            grease3: values.grease3,
+            fiber: values.fiber,
+            sodium: values.sodium,
+            adventages: values.adventages,
+            description: values.description,
+            Category: values.Category,
           };
 
           dispatch(addFood(dataToSubmit)).then((response) => {
@@ -135,7 +135,7 @@ function AddFood(props) {
                 <Form.Item required label="Valor">
                   <Input
                     id="valor"
-                    placeholder="Escribe el valor"
+                    placeholder="Escribe el valor de las calorias"
                     type="text"
                     value={values.valor}
                     onChange={handleChange}

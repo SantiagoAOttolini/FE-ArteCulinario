@@ -17,6 +17,7 @@ import pays from '../../components/views/Pays/PricingHome'
 import Catalogrewards from '../../components/views/rewards/Catalog'
 import SingleReward from '../../components/views/rewards/SingleReward'
 import Information from "../../components/views/Food Compare/Informacion/index"
+import AddFood from "../../components/views/Food Compare/AddFood/index"
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -41,6 +42,7 @@ class App extends Component {
               component={Auth(foodCompare, null)}
             />
             <Route exact path='/information/:id' component={Information}/>
+            <Route exact path='/addFood' component={Auth(AddFood, true)}/>
             <Route
               exact
               path='/forgotPassword'
