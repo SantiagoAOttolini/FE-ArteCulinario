@@ -1,4 +1,8 @@
-import { FETCH_REWARDS, FILTER_REWARDS_BY_CATEGORY } from '../_actions/types'
+import {
+  FETCH_REWARDS,
+  FILTER_REWARDS_BY_CATEGORY,
+  ADD_REWARD
+} from '../_actions/types'
 
 const initialState = {
   items: [],
@@ -23,6 +27,8 @@ export default function(state = initialState, action) {
         Category: action.payload.Category,
         filteredItems: action.payload.items
       }
+    case ADD_REWARD:
+      return { ...state, addReward: action.payload }
 
     default:
       return state

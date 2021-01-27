@@ -1,6 +1,6 @@
 import * as types from '../_actions/types'
-import axios from 'axios';
-
+import axios from 'axios'
+import { ADD_FOOD } from './types'
 
 export const getProducts = () => dispatch =>
   fetch(`http://localhost:5000/api/food`)
@@ -17,13 +17,13 @@ export const compare = product => ({
   product
 })
 
-export function addFood(dataToSubmit){
-  const request = axios.post(`/api/food/addFood`,dataToSubmit)
-      .then(response => response.data);
-  
+export function addFood(dataToSubmit) {
+  const request = axios
+    .post(`http://localhost:5000/api/admin/addFood`, dataToSubmit)
+    .then(response => response.data)
+
   return {
-      type:types.ADD_FOOD,
-      payload: request
+    type: ADD_FOOD,
+    payload: request
   }
 }
-

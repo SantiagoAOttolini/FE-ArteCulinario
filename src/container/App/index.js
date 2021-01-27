@@ -16,9 +16,11 @@ import Cutting from '../../components/views/Analyzer/Cutting/cutting'
 import pays from '../../components/views/Pays/PricingHome'
 import Catalogrewards from '../../components/views/rewards/Catalog'
 import SingleReward from '../../components/views/rewards/SingleReward'
-import Information from "../../components/views/Food Compare/Informacion/index"
-import AddFood from "../../components/views/Food Compare/AddFood/index"
-
+import Information from '../../components/views/Food Compare/Informacion/index'
+import AddFood from '../../components/views/Food Compare/AddFood/index'
+import AddReward from '../../components/views/rewards/AdminAddReward'
+import Auditory from '../../components/views/Auditory/index'
+import Backup from '../../components/views/Backup/index'
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -41,8 +43,8 @@ class App extends Component {
               path='/foodCompare'
               component={Auth(foodCompare, null)}
             />
-            <Route exact path='/information/:id' component={Information}/>
-            <Route exact path='/addFood' component={Auth(AddFood, true)}/>
+            <Route exact path='/information/:id' component={Information} />
+            <Route exact path='/addFood' component={Auth(AddFood, true)} />
             <Route
               exact
               path='/forgotPassword'
@@ -72,6 +74,9 @@ class App extends Component {
               path='/Reward/:id'
               component={Auth(SingleReward, true)}
             />
+            <Route exact path='/Audits' component={Auth(Auditory, true)} />
+            <Route exact path='/AddReward' component={Auth(AddReward, true)} />
+            <Route exact path='/Backup' component={Auth(Backup, true)} />
           </div>
         </Suspense>
       </Switch>

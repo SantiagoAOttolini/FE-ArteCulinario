@@ -1,5 +1,5 @@
 import * as types from '../_actions/types'
-
+import { ADD_FOOD } from '../_actions/types'
 const INITIAL_STATE = {
   products: []
 }
@@ -23,8 +23,8 @@ export default function(state = INITIAL_STATE, action) {
             : product
         )
       }
-      case types.ADD_FOOD:
-        return {...state, addFood: action.payload }
+    case ADD_FOOD:
+      return { ...state, addFood: action.payload }
     default:
       return state
   }
