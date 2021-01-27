@@ -56,11 +56,24 @@ class Informacion extends Component {
     console.log(id);
     return (
       <div className="infoAlimentos">
-        <p>Hola</p>
-        <h1>{product.name}</h1>
-      {/*   <p>{this.state.product.descripcion}</p>
-        <h1>{this.state.product.ventaja}</h1>
-        <p className="pro">{this.state.product.pro}</p> */}
+        <div className="mt-5 d-flex justify-content-center">
+          <h1 className="titleName text-center rounded">{product.name}</h1>
+        </div>
+        <div className="textDescription d-flex justify-content-center">
+          <h5>{product.description}</h5>
+        </div>
+        <div className="mt-4 d-flex justify-content-center">
+          <h4 className="titleAdventages text-center rounded">Ventajas</h4>
+        </div>
+        <div className="d-flex justify-content-center">
+          <h5 className="textAdventages">{product.adventages}</h5>
+        </div>
+        <div className="mt-4 d-flex justify-content-center">
+          <h4 className="titleCategory text-center rounded">Categoria</h4>
+        </div>
+        <div className="d-flex justify-content-center">
+          <h5>{product.Category}</h5>
+        </div>
       </div>
     );
   }

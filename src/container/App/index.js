@@ -44,7 +44,7 @@ class App extends Component {
               path='/foodCompare'
               component={Auth(foodCompare, null)}
             />
-            <Route exact path='/information/:id' component={Information} />
+            <Route exact path='/information/:id' component={Auth(Information, true)} />
             <Route exact path='/addFood' component={Auth(AddFood, true)} />
             <Route exact path='/benefits' component={Auth(Benefits, true)} />
             <Route
