@@ -95,7 +95,7 @@ function AddReward(props) {
                 <Form.Item required label='Nombre'>
                   <Input
                     id='name'
-                    placeholder='Escribe el nombre del alimento'
+                    placeholder='Escribe el nombre del lugar'
                     type='text'
                     value={values.name}
                     onChange={handleChange}
@@ -114,7 +114,7 @@ function AddReward(props) {
                 <Form.Item required label='Descripcion'>
                   <Input
                     id='description'
-                    placeholder='Escribe la descripcion del alimento'
+                    placeholder='Escribe la descripcion del lugar'
                     type='text'
                     value={values.description}
                     onChange={handleChange}
@@ -130,7 +130,7 @@ function AddReward(props) {
                   )}
                 </Form.Item>
 
-                <Form.Item required label='Location'>
+                <Form.Item required label='Direccion'>
                   <Input
                     id='Location'
                     placeholder='Escribe la direccion del local'
@@ -173,7 +173,7 @@ function AddReward(props) {
                 <Form.Item required label='Categoria'>
                   <Input
                     id='Category'
-                    placeholder='Escribe la categoria del alimento'
+                    placeholder='Escribe la categoria del lugar'
                     type='text'
                     value={values.Category}
                     onChange={handleChange}

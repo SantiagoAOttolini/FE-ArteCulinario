@@ -1,10 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteProduct } from '../../../../_actions/product'
+import {useSelector} from "react-redux"
 import './styles.css'
 
 const Product = ({ product, compare }) => (
   <div key={product.id} className='col-sm-6 col-md-3'>
+    
     <div className={'product ' + (product.compare ? 'compare' : '')}>
       <img src={`http://localhost:5000/${product.photo}`} alt={product.name} />
       <div className='image_overlay' />
@@ -17,12 +19,15 @@ const Product = ({ product, compare }) => (
         </div>
       </div>
     </div>
+    <div className="btnDelete d-flex justify-content-center">
     <button
-      className='btn btn-danger btn-xs'
+      className='mb-3 btn btn-danger btn-xs'
       onClick={() => this.deleteProduct(product._id)}
     >
       Eliminar Alimento
     </button>
+    </div>
+    
   </div>
 )
 

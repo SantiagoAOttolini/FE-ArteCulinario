@@ -187,7 +187,7 @@ function AddFood(props) {
                     <div className="inputFeedback">{errors.protein}</div>
                   )}
                 </Form.Item>
-                <Form.Item required label="Grasa 1">
+                <Form.Item required label="Grasa insaturadas">
                   <Input
                     id="grease1"
                     placeholder="Escribe el valor de la grasa"
@@ -205,7 +205,7 @@ function AddFood(props) {
                     <div className="inputFeedback">{errors.grease1}</div>
                   )}
                 </Form.Item>
-                <Form.Item required label="Grasa 2">
+                <Form.Item required label="Grasa saturadas">
                   <Input
                     id="grease2"
                     placeholder="Escribe el valor de la grasa"
@@ -223,7 +223,7 @@ function AddFood(props) {
                     <div className="inputFeedback">{errors.grease2}</div>
                   )}
                 </Form.Item>
-                <Form.Item required label="Grasa 3">
+                <Form.Item required label="Grasa trans">
                   <Input
                     id="grease3"
                     placeholder="Escribe el valor de la grasa"
