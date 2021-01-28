@@ -7,9 +7,13 @@ import {
   Grid,
   TextField,
   Button,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
 } from "@material-ui/core";
 import QRCode from "qrcode";
-import * as Yup from 'yup'
+import * as Yup from "yup";
 import QrReader from "react-qr-reader";
 
 function App() {
@@ -19,7 +23,6 @@ function App() {
   const [scanResultWebCam, setScanResultWebCam] = useState("");
   const classes = useStyles();
   const qrRef = useRef(null);
-
   const generateQrCode = async () => {
     /* textValidation=["Combo uno","Combo dos", "Combo tres", "Combo cuatro", "Combo cinco"] */
     try {
@@ -51,40 +54,51 @@ function App() {
   };
   return (
     <div className="mt-5">
-       <Container className={classes.conatiner}>
-      <Card>
-        <h2 className={classes.title}>
-          Genera tu codigo QR para obtener tu beneficio
-        </h2>
-        <CardContent>
-          <Grid>
-            <div className="d-flex justify-content-center">
-              <Grid>
-                <TextField
+      <Container className={classes.conatiner}>
+        <Card>
+          <h2 className={classes.title}>
+            Genera tu codigo QR para obtener tu beneficio
+          </h2>
+          <CardContent>
+            <Grid>
+              <div className="d-flex justify-content-center">
+                <Grid>
+                  <FormControl className={classes.formControl}>
+                    <InputLabel>Elige tu combo</InputLabel>
+                    <Select onChange={(e) => setText(e.target.value)}>
+                      <MenuItem value={"Combo uno"}>Combo uno</MenuItem>
+                      <MenuItem value={"Combo dos"}>Combo dos</MenuItem>
+                      <MenuItem value={"Combo tres"}>Combo tres</MenuItem>
+                      <MenuItem value={"Combo cuatro"}>Combo cuatro</MenuItem>
+                      <MenuItem value={"Combo cinco"}>Combo cinco</MenuItem>
+                    </Select>
+                  </FormControl>
+
+                  {/*  <TextField
                   label="Escribe el texto aqui"
                   onChange={(e) => setText(e.target.value)}
-                />
-                <div className="d-flex justify-content-center">
-                <Button
-                  className={classes.btn}
-                  variant="contained"
-                  color="primary"
-                  onClick={() => generateQrCode()}
-                >
-                  Generar
-                </Button>
-                </div>
-                
-                <div className="d-flex justify-content-center">
-                {imageUrl ? (
-                  <a href={imageUrl} download>
-                    <img src={imageUrl} alt="img" />
-                  </a>
-                ) : null}
-                </div>
-              </Grid>
-            </div>
-            {/*  <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
+                /> */}
+                  <div className="d-flex justify-content-center">
+                    <Button
+                      className={classes.btn}
+                      variant="contained"
+                      color="primary"
+                      onClick={() => generateQrCode()}
+                    >
+                      Generar
+                    </Button>
+                  </div>
+
+                  <div className="d-flex justify-content-center">
+                    {imageUrl ? (
+                      <a href={imageUrl} download>
+                        <img src={imageUrl} alt="img" />
+                      </a>
+                    ) : null}
+                  </div>
+                </Grid>
+              </div>
+              {/*  <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
                         <Button className={classes.btn} variant="contained" color="secondary" onClick={onScanFile}>Escanear codigo QR</Button>
                         <QrReader
                           ref={qrRef}
@@ -96,7 +110,7 @@ function App() {
                         />
                         <h4>Codigo escaneado: {scanResultFile}</h4>
                       </Grid> */}
-            {/*  <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
+              {/*  <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
                          <h4>Escanear codigo a travez de la Web Cam</h4>
                          <QrReader
                          delay={300}
@@ -106,18 +120,20 @@ function App() {
                          />
                          <h4>Codigo escaneado: {scanResultWebCam}</h4>
                       </Grid> */}
-          </Grid>
-        </CardContent>
-      </Card>
-    </Container>
+            </Grid>
+          </CardContent>
+        </Card>
+      </Container>
     </div>
-   
   );
 }
 
 const useStyles = makeStyles((theme) => ({
   conatiner: {
     marginTop: 10,
+  },
+  formControl: {
+    minWidth: 200,
   },
   title: {
     display: "flex",

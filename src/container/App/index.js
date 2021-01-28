@@ -22,6 +22,7 @@ import AddReward from '../../components/views/Benefits/AdminAddReward'
 import Auditory from '../../components/views/Auditory/index'
 import Backup from '../../components/views/Backup/index'
 import Benefits from "../../components/views/Benefits/Benefits"
+import QRverify from "../../components/views/Benefits/QRVerify"
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -45,6 +46,7 @@ class App extends Component {
               component={Auth(foodCompare, null)}
             />
             <Route exact path='/information/:id' component={Auth(Information, true)} />
+            <Route exact path='/qrverify' component={Auth(QRverify, null)} />
             <Route exact path='/addFood' component={Auth(AddFood, true)} />
             <Route exact path='/benefits' component={Auth(Benefits, true)} />
             <Route
