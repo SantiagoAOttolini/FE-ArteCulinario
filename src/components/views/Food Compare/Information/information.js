@@ -4,20 +4,6 @@ import { connect } from "react-redux";
 import { getProducts } from "../../../../_actions/product";
 
 class Informacion extends Component {
-  /* constructor(props) {
-    super(props);
-    this.state = { product: {} };
-  }
-
-  componentDidMount() {
-    let product = Products.products.find((product) => {
-      // me devuelve el primero que retorna true
-      return product.id == this.props.match.params.id;
-    });
-    this.setState({ product: product });
-  }
- 
-  const; */
   constructor(props) {
     super(props);
     const id = this.props.match.params.id;
@@ -53,14 +39,15 @@ class Informacion extends Component {
   render() {
     const product = this.state.product;
     const id = this.state.product.id;
+    /*     const adventages = product.adventages && product.adventages.split(""); */
     console.log(id);
     return (
       <div className="infoAlimentos">
         <div className="mt-5 d-flex justify-content-center">
           <h1 className="titleName text-center rounded">{product.name}</h1>
         </div>
-        <div className="mt-2 d-flex justify-content-center">
-        <img src={`http://localhost:5000/${product.photo}`}></img>
+        <div className="mb-5 mt-2 d-flex justify-content-center">
+          <img src={`http://localhost:5000/${product.photo}`}></img>
         </div>
         <div className="textDescription d-flex justify-content-center">
           <h5>{product.description}</h5>

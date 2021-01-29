@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchRewards } from '../../../_actions/rewards_actions'
-import Reward from './Reward'
+import { fetchRewards } from '../../../../_actions/rewards_actions'
+import Reward from '../Rewards/reward'
 
 class RewardList extends Component {
   componentDidMount() {

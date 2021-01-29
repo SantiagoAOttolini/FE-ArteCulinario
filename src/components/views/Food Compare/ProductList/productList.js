@@ -1,5 +1,5 @@
 import React from "react";
-import {Product} from "../"
+import {Product} from ".."
 
 const ProductList = ({ products, compare }) => (
   <div className="row mt-3">

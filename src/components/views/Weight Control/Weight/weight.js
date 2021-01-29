@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
-import Range from "./Range";
-import Departure from "./Departure";
+import Range from "../Range/range";
+import Departure from "../Departure/departure";
 
 class Index extends Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import "core-js";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./container/App/index";
+import App from "./Container/app";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import thunk from "redux-thunk";

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { filterRewardsByCategory } from '../../../_actions/rewards_actions'
+import { filterRewardsByCategory } from '../../../../_actions/rewards_actions'
 
 class Filter extends Component {
   render() {

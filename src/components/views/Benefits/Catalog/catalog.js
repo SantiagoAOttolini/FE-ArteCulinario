@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import RewardList from "./RewardList";
-import Filter from "./Filter";
+import RewardList from "../Rewards list/rewardList";
+import Filter from "../Filter/filter";
 import { connect } from "react-redux";
-import { filterRewardsByCategory } from "../../../_actions/rewards_actions";
+import { filterRewardsByCategory } from "../../../../_actions/rewards_actions";
 
 class Catalog extends Component {
   render() {

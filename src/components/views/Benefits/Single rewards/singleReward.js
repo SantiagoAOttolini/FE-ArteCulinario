@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { fetchRewards } from "../../../_actions/rewards_actions";
+import { fetchRewards } from "../../../../_actions/rewards_actions";
 import "./style.css";
 
 class SingleReward extends Component {
@@ -48,7 +48,7 @@ class SingleReward extends Component {
         <div>
           <div>
             <div className="d-flex justify-content-center">
-              <h2>Cargando Receta...</h2>
+              <h2>Cargando locales...</h2>
             </div>
           </div>
         </div>
