@@ -74,6 +74,16 @@ function RightMenu(props) {
             ) : (
               ''
             )}
+             {user.userData &&
+            user.userData.email === 'facundo_loberse@hotmail.com' ? (
+              <Menu.Item key='deleteFood'>
+                <a className='containerLogout' href='/deleteFood'>
+                  Borrar alimento
+                </a>
+              </Menu.Item>
+            ) : (
+              ''
+            )}
             {user.userData &&
             user.userData.email === 'facundo_loberse@hotmail.com' ? (
               <Menu.Item key='addReward'>
@@ -84,6 +94,7 @@ function RightMenu(props) {
             ) : (
               ''
             )}
+
             {user.userData &&
             user.userData.email === 'facundo_loberse@hotmail.com' ? (
               <Menu.Item key='Audits'>

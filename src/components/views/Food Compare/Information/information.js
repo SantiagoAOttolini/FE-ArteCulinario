@@ -39,8 +39,9 @@ class Informacion extends Component {
   render() {
     const product = this.state.product;
     const id = this.state.product.id;
-    /*     const adventages = product.adventages && product.adventages.split(""); */
-    console.log(id);
+    console.log(product.adventages)
+    /* const adventages = product.adventages && product.adventages.split("-");  */
+
     return (
       <div className="infoAlimentos">
         <div className="mt-5 d-flex justify-content-center">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { deleteProduct } from '../../../../_actions/product'
-import {useSelector} from "react-redux"
+import  {deleteProduct}  from '../../../../_actions/product'
+import {useDispatch} from "react-redux"
 import './styles.css'
 
 const Product = ({ product, compare }) => (
@@ -22,7 +22,7 @@ const Product = ({ product, compare }) => (
     <div className="btnDelete d-flex justify-content-center">
     <button
       className='mb-3 btn btn-danger btn-xs'
-      onClick={() => this.deleteProduct(product._id)}
+      onClick={()=>this.props.deleteProduct(product._id)}
     >
       Eliminar Alimento
     </button>
