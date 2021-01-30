@@ -1,33 +1,36 @@
-import React, { Component } from 'react'
-import Food from './food'
-import { connect } from 'react-redux'
-import { getProducts } from '../../../../_actions/product'
-import "./style.css"
+import React, { Component } from "react";
+import Food from "./food";
+import { connect } from "react-redux";
+import { getProducts } from "../../../../_actions/product";
+import "./style.css";
 
 class foodList extends Component {
   componentDidMount() {
-    this.props.getProducts()
+    this.props.getProducts();
   }
   render() {
     return (
       <>
-        <div className='container py-5'>
-          <div className='rowFood'>
+        <div className="mt-4 d-flex justify-content-center">
+          <h3 className="titleDelete rounded text-center">Borrar alimentos</h3>
+        </div>
+        <div className="containerImg container py-5">
+          <div className="rowFood">
             {this.props.products &&
-              this.props.products.map(product => (
+              this.props.products.map((product) => (
                 <Food key={product._id} product={product} />
               ))}
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => ({
-  products: state.product.products
-})
+const mapStateToProps = (state) => ({
+  products: state.product.products,
+});
 
 export default connect(mapStateToProps, {
-    getProducts
-})(foodList)
+  getProducts,
+})(foodList);
