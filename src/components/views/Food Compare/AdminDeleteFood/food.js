@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteProduct, getProducts } from "../../../../_actions/product";
+import "./style.css"
 
 class food extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      check: false,
-      chek2: false,
+
     };
   }
 
@@ -35,7 +35,7 @@ class food extends Component {
       </div>
     );
 
-    return <div>{foodItem}</div>;
+    return <div className="listOfFood">{foodItem}</div>;
   }
 }
 

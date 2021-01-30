@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Food from './food'
 import { connect } from 'react-redux'
 import { getProducts } from '../../../../_actions/product'
+import "./style.css"
 
 class foodList extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class foodList extends Component {
     return (
       <>
         <div className='container py-5'>
-          <div>
+          <div className='rowFood'>
             {this.props.products &&
               this.props.products.map(product => (
                 <Food key={product._id} product={product} />
