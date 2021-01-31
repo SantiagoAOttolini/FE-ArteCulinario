@@ -5,23 +5,22 @@ export default class Reward extends Component {
   render() {
     const reward = this.props.RReward;
     const rewardItems = (
-      <div className="" key={reward._id}>
-        <div className="d-flex justify-content-center rounded">
+      <div className="col-md-4" key={reward._id}>
+        <div className="mt-5 mb-5 thumbnail listOfBenefits">
           <img
-          className="rounded"
+            className="rounded"
             src={`http://localhost:5000/${reward.photo}`}
             alt="photo"
             width="250"
             height="200"
           />
-        </div>
-
-        <div className="d-flex justify-content-center mt-3">
-          <Link to={`/Reward/${reward._id}`}>
-            <button className="btn btn-info  text-white rounded h5">
-              Ver beneficios disponibles
-            </button>
-          </Link>
+          <div className="mt-4">
+            <Link to={`/Reward/${reward._id}`}>
+              <button className="ml-3 btn btn-info  text-white rounded h5">
+                Ver beneficios disponibles
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );

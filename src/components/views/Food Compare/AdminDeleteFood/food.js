@@ -26,7 +26,7 @@ class food extends Component {
         </div>
         <div className="d-flex justify-content-center">
           <button
-            className="btn btn-danger btn-xs"
+            className="btnDelete btn btn-danger btn-xs"
             onClick={() => this.props.deleteProduct(food._id)}
           >
             Eliminar

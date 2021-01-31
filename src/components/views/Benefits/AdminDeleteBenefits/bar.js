@@ -26,7 +26,7 @@ class bar extends Component {
             ></img>
           <div className="mt-3">
             <button
-              className="btn btn-danger btn-xs"
+              className="btnDelete mt-2 btn btn-danger btn-xs"
               onClick={() => this.props.deleteRewards(reward._id)}
             >
               Eliminar
