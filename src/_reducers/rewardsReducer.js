@@ -43,7 +43,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        rewards: newReward,
+        items: newReward,
       };
     default:
       return state;
