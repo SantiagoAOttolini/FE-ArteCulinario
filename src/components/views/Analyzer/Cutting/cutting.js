@@ -166,6 +166,6 @@ export default connect(
     products: state.product.products
   }),
   dispatch => ({
-    actions: bindActionCreators(analyzerActions, dispatch)
+    actions: bindActionCreators(analyzerActions, dispatch),
   })
 )(Cutting)

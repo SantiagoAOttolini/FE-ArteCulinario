@@ -36,103 +36,106 @@ function RightMenu(props) {
     );
   } else {
     return (
-      <Menu mode={props.mode}>
-        <Menu.Item>
-          <div className="containerLogin">
-            <div className="loginName btn btn-info  text-white rounded h4 text-left">
-              <p>{user.userData && user.userData.name}</p>
-            </div>
-            <div className="loginName btn btn-info  text-white rounded h4 text-left ml-2">
-              <p>{user.userData && user.userData.accountType}</p>
-            </div>
-          </div>
-        </Menu.Item>
-
+      <div>
+        <Menu mode={props.mode}>
         <SubMenu
-          title={
-            <span>
-              <img
-                className="imgAvatar"
-                id="userAvatar"
-                src={user.userData && user.userData.image}
-              ></img>
-            </span>
-          }
-        >
-          <MenuItemGroup title="">
-            <Menu.Item key="setting:2">
-              <a href="/changePassword">Cambiar contraseña</a>
-            </Menu.Item>
+            title={
+              <span>
+                <img
+                  className="imgAvatar"
+                  id="userAvatar"
+                  src={user.userData && user.userData.image}
+                ></img>
+              </span>
+            }
+          >
+            <MenuItemGroup className="mr-5" title="">
+              <Menu.Item key="setting:2">
+                <a href="/changePassword">Cambiar contraseña</a>
+              </Menu.Item>
 
-            {user.userData &&
-            user.userData.email === "facundo_loberse@hotmail.com" ? (
-              <Menu.Item key="addFood">
-                <a className="containerLogout" href="/addFood">
-                  Agregar alimento
-                </a>
-              </Menu.Item>
-            ) : (
-              ""
-            )}
-            {user.userData &&
-            user.userData.email === "facundo_loberse@hotmail.com" ? (
-              <Menu.Item key="deleteFood">
-                <a className="containerLogout" href="/deleteFood">
-                  Borrar alimento
-                </a>
-              </Menu.Item>
-            ) : (
-              ""
-            )}
-            {user.userData &&
-            user.userData.email === "facundo_loberse@hotmail.com" ? (
-              <Menu.Item key="addReward">
-                <a className="containerLogout" href="/addReward">
-                  Agregar local
-                </a>
-              </Menu.Item>
-            ) : (
-              ""
-            )}
-            {user.userData &&
-            user.userData.email === "facundo_loberse@hotmail.com" ? (
-              <Menu.Item key="deleteReward">
-                <a className="containerLogout" href="/deleteReward">
-                  Borrar local
-                </a>
-              </Menu.Item>
-            ) : (
-              ""
-            )}
-            {user.userData &&
-            user.userData.email === "facundo_loberse@hotmail.com" ? (
-              <Menu.Item key="Audits">
-                <a className="containerLogout" href="/Audits">
-                  Auditoria
-                </a>
-              </Menu.Item>
-            ) : (
-              ""
-            )}
+              {user.userData &&
+              user.userData.email === "facundo_loberse@hotmail.com" ? (
+                <Menu.Item key="addFood">
+                  <a className="containerLogout" href="/addFood">
+                    Agregar alimento
+                  </a>
+                </Menu.Item>
+              ) : (
+                ""
+              )}
+              {user.userData &&
+              user.userData.email === "facundo_loberse@hotmail.com" ? (
+                <Menu.Item key="deleteFood">
+                  <a className="containerLogout" href="/deleteFood">
+                    Borrar alimento
+                  </a>
+                </Menu.Item>
+              ) : (
+                ""
+              )}
+              {user.userData &&
+              user.userData.email === "facundo_loberse@hotmail.com" ? (
+                <Menu.Item key="addReward">
+                  <a className="containerLogout" href="/addReward">
+                    Agregar local
+                  </a>
+                </Menu.Item>
+              ) : (
+                ""
+              )}
+              {user.userData &&
+              user.userData.email === "facundo_loberse@hotmail.com" ? (
+                <Menu.Item key="deleteReward">
+                  <a className="containerLogout" href="/deleteReward">
+                    Borrar local
+                  </a>
+                </Menu.Item>
+              ) : (
+                ""
+              )}
+              {user.userData &&
+              user.userData.email === "facundo_loberse@hotmail.com" ? (
+                <Menu.Item key="Audits">
+                  <a className="containerLogout" href="/Audits">
+                    Auditoria
+                  </a>
+                </Menu.Item>
+              ) : (
+                ""
+              )}
 
-            {user.userData &&
-            user.userData.email === "facundo_loberse@hotmail.com" ? (
-              <Menu.Item key="Backup">
-                <a className="containerLogout" href="/Backup">
-                  Backup
+              {user.userData &&
+              user.userData.email === "facundo_loberse@hotmail.com" ? (
+                <Menu.Item key="Backup">
+                  <a className="containerLogout" href="/Backup">
+                    Backup
+                  </a>
+                </Menu.Item>
+              ) : (
+                ""
+              )}
+              <Menu.Item key="logout">
+                <a className="containerLogout" onClick={logoutHandler}>
+                  Logout
                 </a>
               </Menu.Item>
-            ) : (
-              ""
-            )}
-            <Menu.Item key="logout">
-              <a className="containerLogout" onClick={logoutHandler}>
-                Logout
-              </a>
-            </Menu.Item>
-          </MenuItemGroup>
-        </SubMenu>
-      </Menu>
+            </MenuItemGroup>
+          </SubMenu>
+          <Menu.Item>
+            <div className="containerLogin">
+              <div className="loginName btn btn-info  text-white rounded h4 text-left">
+                <p>{user.userData && user.userData.name}</p>
+              </div>
+              <div className="loginName btn btn-info  text-white rounded h4 text-left ml-2">
+                <p>{user.userData && user.userData.accountType}</p>
+              </div>
+            </div>
+          </Menu.Item>
+
+          
+        </Menu>
+      </div>
     );
   }
 }

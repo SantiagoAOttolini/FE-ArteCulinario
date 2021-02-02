@@ -78,9 +78,7 @@ class HomePage extends React.Component {
     this.setState({
       totalCalories: stringScore
     })
-    this.setState({
-      Bmr: stringScore
-    })
+    this.props.get_bmr(stringScore);
   }
 
   render() {
@@ -142,7 +140,7 @@ class HomePage extends React.Component {
         
         <div className='d-flex justify-content-center btnLost mt-4'>
           <button className='w-50 mb-2 btn btn-info'>
-            <Link className='text-light' to='/bulking'>
+            <Link className='text-light' to='/bulking' /* state={this.props.Bmr} */>
               Aumentar masa muscular
             </Link>
           </button>
