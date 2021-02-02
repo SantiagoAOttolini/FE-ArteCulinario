@@ -21,10 +21,10 @@ import AddFood from '../components/views/Food Compare/AdminAddFood/addFood'
 import AddReward from '../components/views/Benefits/AdminAddRewards/adminAddReward'
 import Auditory from '../components/views/Auditory/index'
 import Backup from '../components/views/Backup/index'
-import Benefits from "../components/views/Benefits/Benefits/benefits"
-import QRverify from "../components/views/Benefits/QR Verify/QRVerify"
-import DeleteFood from "../components/views/Food Compare/AdminDeleteFood/deleteFood"
-import DeleteReward from "../components/views/Benefits/AdminDeleteBenefits/deleteBenefits"
+import Benefits from '../components/views/Benefits/Benefits/benefits'
+import QRverify from '../components/views/Benefits/QR Verify/QRVerify'
+import DeleteFood from '../components/views/Food Compare/AdminDeleteFood/deleteFood'
+import DeleteReward from '../components/views/Benefits/AdminDeleteBenefits/deleteBenefits'
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -47,12 +47,24 @@ class App extends Component {
               path='/foodCompare'
               component={Auth(foodCompare, null)}
             />
-            <Route exact path='/information/:id' component={Auth(Information, true)} />
+            <Route
+              exact
+              path='/information/:id'
+              component={Auth(Information, true)}
+            />
             <Route exact path='/qrverify' component={Auth(QRverify, null)} />
             <Route exact path='/addFood' component={Auth(AddFood, true)} />
-            <Route exact path='/deleteFood' component={Auth(DeleteFood, true)} />
+            <Route
+              exact
+              path='/deleteFood'
+              component={Auth(DeleteFood, true)}
+            />
             <Route exact path='/benefits' component={Auth(Benefits, true)} />
-            <Route exact path='/deleteReward' component={Auth(DeleteReward, true)} />
+            <Route
+              exact
+              path='/deleteReward'
+              component={Auth(DeleteReward, true)}
+            />
             <Route
               exact
               path='/forgotPassword'

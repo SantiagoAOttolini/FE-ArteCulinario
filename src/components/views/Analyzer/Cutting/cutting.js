@@ -7,8 +7,15 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 class Cutting extends Component {
+  constructor(props) {
+    super(props)
+  }
+  componentWillMount() {
+    this.props.actions.getProducts()
+  }
   render() {
     const { products } = this.props
+    const bmrCalories = this.props.location.aboutProps
     const options = {
       title: {
         text: 'Calorias diarias'
@@ -121,8 +128,8 @@ class Cutting extends Component {
             <p>
               {' '}
               Dado que ha calculado las <b> calorías necesarias </b> en la
-              página de inicio, las <b> {/* s */}</b> calorías es su objetivo
-              cada día en términos de ingesta calórica total.{' '}
+              página de inicio, las <b> {bmrCalories}</b> calorías es su
+              objetivo cada día en términos de ingesta calórica total.{' '}
             </p>
             <p>
               {' '}
@@ -166,6 +173,6 @@ export default connect(
     products: state.product.products
   }),
   dispatch => ({
-    actions: bindActionCreators(analyzerActions, dispatch),
+    actions: bindActionCreators(analyzerActions, dispatch)
   })
 )(Cutting)

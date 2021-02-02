@@ -5,7 +5,7 @@ import MiniChart from '../MiniChart/mini_chart'
 import * as analyzerActions from '../../../../_actions/analyzer_actions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {useLocation} from "react-router-dom"
+import { useLocation } from 'react-router-dom'
 
 class Bulking extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Bulking extends Component {
 
   render() {
     const { products } = this.props
-    const bmrCalories = this.props.BMR
+    const bmrCalories = this.props.location.aboutProps
     /* const { state } = useLocation(); */
     console.log(bmrCalories)
     const foodItems = products.map((food, index) => {
@@ -111,16 +111,16 @@ class Bulking extends Component {
             </p>
             <br />
             <p>
-              Tu <b>cantidad de calorias</b> es <b> {bmrCalories}</b> y son
-              las calorías que se debe proponer ingerir cada día en términos de
+              Tu <b>cantidad de calorias</b> es <b> {bmrCalories}</b> y son las
+              calorías que se debe proponer ingerir cada día en términos de
               ingesta calórica total.
             </p>
             <p>
               {' '}
               Tenemos nuestra ingesta total de calorías, de las cuales -{' '}
-              <b>{/* {Math.ceil(0.17 * calories)} */}</b> - se utilizan para
+              <b>{Math.ceil(0.17 * bmrCalories)}</b> - se utilizan para
               funciones normales y vitales, mientras que el resto -{' '}
-              <b>{/* {Math.floor(0.83 * calories)} */}</b> - de las calorías se
+              <b>{Math.floor(0.83 * bmrCalories)} </b> - de las calorías se
               excretan o almacenan como grasa.
             </p>
             <br />
@@ -133,10 +133,9 @@ class Bulking extends Component {
               Así que supongamos que hacemos 7 comidas al día, recuerde que esto
               incluye batidos post entrenamiento.
               <b>
-                {/* {" "}
-                {calories} */}
+                {bmrCalories}
                 (calorías totales) / 7 (comidas al día) ={' '}
-                {/* {Math.round(calories / 7)} */}
+                {Math.round(bmrCalories / 7)}
               </b>{' '}
               - Calorías por comida (aprox.).
             </p>
@@ -156,10 +155,9 @@ class Bulking extends Component {
 export default connect(
   state => ({
     products: state.product.products,
-    BRM:state.analyzer.bmr
+    BRM: state.analyzer.bmr
   }),
   dispatch => ({
     actions: bindActionCreators(analyzerActions, dispatch)
   })
-  
 )(Bulking)

@@ -12,7 +12,6 @@ import { CONSTANTS } from '../../Constants/constants'
 import { connect } from 'react-redux'
 import { get_bmr } from '../../../../../_actions/analyzer_actions'
 
-
 class HomePage extends React.Component {
   /*
   this can be defaulted to have the radio button 'lit'
@@ -78,7 +77,7 @@ class HomePage extends React.Component {
     this.setState({
       totalCalories: stringScore
     })
-    this.props.get_bmr(stringScore);
+    this.props.get_bmr(stringScore)
   }
 
   render() {
@@ -89,28 +88,27 @@ class HomePage extends React.Component {
 
       <div>
         <div className='mt-4'></div>
-        <div className="ml-4 mr-4 mb-5">
-        <Paper>
-          <Grid container spacing={24}>
-            <Grid item xs={12}>
-              <Typography align='center' variant='h6' color='inithial'>
-                {'Calorias totales:'}
-              </Typography>
-              <Typography
-                align='center'
-                variant='h4'
-                color='primary'
-                onChange={() => {
-                  get_bmr()
-                }}
-              >
-                {this.state.totalCalories}
-              </Typography>
+        <div className='ml-4 mr-4 mb-5'>
+          <Paper>
+            <Grid container spacing={24}>
+              <Grid item xs={12}>
+                <Typography align='center' variant='h6' color='inithial'>
+                  {'Calorias totales:'}
+                </Typography>
+                <Typography
+                  align='center'
+                  variant='h4'
+                  color='primary'
+                  onChange={() => {
+                    get_bmr()
+                  }}
+                >
+                  {this.state.totalCalories}
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-        </Paper>
+          </Paper>
         </div>
-       
 
         <RadioButtonField
           handleChange={this.handleChange}
@@ -125,36 +123,45 @@ class HomePage extends React.Component {
           height={this.state.height}
           age={this.state.age}
         />
-        <div className="d-flex justify-content-center mt-4">
-        <Button
-          variant='contained'
-          size='large'
-          color='primary'
-          onClick={() => {
-            this.calculateScore()
-          }}
-        >
-          Calcular
-        </Button>
+        <div className='d-flex justify-content-center mt-4'>
+          <Button
+            variant='contained'
+            size='large'
+            color='primary'
+            onClick={() => {
+              this.calculateScore()
+            }}
+          >
+            Calcular
+          </Button>
         </div>
-        
+
         <div className='d-flex justify-content-center btnLost mt-4'>
           <button className='w-50 mb-2 btn btn-info'>
-            <Link className='text-light' to='/bulking' /* state={this.props.Bmr} */>
+            <Link
+              className='text-light'
+              to={{
+                pathname: '/Bulking',
+                aboutProps: this.props.Bmr
+              }}
+            >
               Aumentar masa muscular
             </Link>
           </button>
         </div>
         <div className='d-flex justify-content-center'>
           <button className='w-50 btn btn-info'>
-            <Link className='text-light' to='/cutting'>
+            <Link
+              className='text-light'
+              to={{
+                pathname: '/cutting',
+                aboutProps: this.props.Bmr
+              }}
+            >
               Reducir grasa
             </Link>
           </button>
-          
         </div>
-        
-        
       </div>
     )
   }
