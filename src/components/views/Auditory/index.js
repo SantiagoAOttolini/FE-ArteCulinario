@@ -1,27 +1,84 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { Card, Avatar, Col, Typography, Row } from "antd";
+import axios from "axios";
 
-export default class Auditory extends Component {
-  render() {
+function Auditory() {
+  const [Data, setData] = useState([]);
+
+  useEffect(() => {
+    peticionGet();
+  }, []);
+
+  const peticionGet = async () => {
+    await axios
+      .get("http://localhost:5000/api/admin/getUsersAuditory")
+      .then((response) => {
+        console.log(response.data.data);
+        setData(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  console.log("data fuera del axios", Data);
+
+  const renderCards = Data.map((user, index) => {
     return (
-      <div>
-        <div className="mt-3 d-flex justify-content-center">
-          <h1>|Auditoria de pagos|</h1>
-        </div>
-        <div className="d-flex justify-content-center">
-          <a href="https://dashboard.stripe.com/test/dashboard" target="_blank">
-            <button className="btn btn-info  text-white rounded h5">
-              Ver auditoria
-            </button>
-          </a>
-        </div>
-        <div className="container mt-5 d-flex justify-content-center">
-          <h5>
-            Al darle click al boton <strong>"Ver auditoria"</strong> los
-            redirigira a la pagina <strong className="text-info">https://stripe.com/es-us</strong> para poder
-            visualizar la auditoria.
-          </h5>
-        </div>
-      </div>
+      <tr key={index}>
+        <td className="text-center">{user.user_id}</td>
+        <td>
+          <div className="d-flex justify-content-center">{user.username}</div>
+        </td>
+        <td>
+          <div className="d-flex justify-content-center">{user.loginDate}</div>
+        </td>
+        <td>
+          <div className="d-flex justify-content-center">{user.logoutDate}</div>
+        </td>
+      </tr>
     );
-  }
+  });
+
+  return (
+    <div>
+      <div>
+        <div>
+          <div className="mt-3 d-flex justify-content-center">
+            <h1>|Auditoria de pagos|</h1>
+          </div>
+          <div className="d-flex justify-content-center">
+            <a
+              href="https://dashboard.stripe.com/test/dashboard"
+              target="_blank"
+            >
+              <button className="btn btn-info  text-white rounded h5">
+                Ver auditoria
+              </button>
+            </a>
+          </div>
+          <div className="container mt-5 d-flex justify-content-center">
+            <h5>
+              Al darle click al boton <strong>"Ver auditoria"</strong> los
+              redirigira a la pagina{" "}
+              <strong className="text-info">https://stripe.com/es-us</strong>{" "}
+              para poder visualizar la auditoria.
+            </h5>
+          </div>
+        </div>
+        <table className="ml-5">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Fecha login</th>
+              <th>Fecha logout</th>
+            </tr>
+          </thead>
+          <tbody>{renderCards}</tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
+export default Auditory;
