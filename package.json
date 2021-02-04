@@ -17,6 +17,7 @@
     "qrcode": "^1.4.4",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.6",
+    "react-cookie": "^4.0.3",
     "react-dom": "^16.8.6",
     "react-highcharts": "^16.1.0",
     "react-html-table-to-excel": "^2.0.0",

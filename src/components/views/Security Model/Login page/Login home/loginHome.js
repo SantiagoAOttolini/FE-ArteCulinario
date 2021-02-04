@@ -5,16 +5,42 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Form, Icon, Input, Button, Checkbox, Typography } from "antd";
 import { useDispatch } from "react-redux";
+import {useSelector} from "react-redux"
+import { useCookies } from 'react-cookie'
+import axios from "axios"
 import "./style.css";
 
 const { Title } = Typography;
 
 function LoginPage(props) {
+  
+  const user = useSelector(state => state.user)
   const dispatch = useDispatch();
+  const [cookies, setCookie] = useCookies(['logDate'])
   const rememberMeChecked = localStorage.getItem("rememberMe") ? true : false;
-
   const [formErrorMessage, setFormErrorMessage] = useState("");
   const [rememberMe, setRememberMe] = useState(rememberMeChecked);
+
+  function handleCookie() {
+    var today = new Date()
+
+    var date =
+      today.getDate() +
+      '/' +
+      (today.getMonth() + 1) +
+      '/' +
+      today.getFullYear() +
+      '/' +
+      today.getHours() +
+      ':' +
+      today.getMinutes() +
+      ':' +
+      today.getSeconds()
+
+    setCookie('logDate', date, {
+      path: '/'
+    })
+  }
 
   const handleRememberMe = () => {
     setRememberMe(!rememberMe);
@@ -49,6 +75,7 @@ function LoginPage(props) {
             .then((response) => {
               if (response.payload.loginSuccess) {
                 window.localStorage.setItem("userId", response.payload.userId);
+                handleCookie()
                 if (rememberMe === true) {
                   window.localStorage.setItem("rememberMe", values.id);
                 } else {
