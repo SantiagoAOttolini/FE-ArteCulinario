@@ -97,7 +97,7 @@ function RightMenu(props) {
               </Menu.Item>
 
               {user.userData &&
-              user.userData.email === "facundo_loberse@hotmail.com" ? (
+              user.userData.email === "santiago.ottolini98@gmail.com" ? (
                 <Menu.Item key="addFood">
                   <a className="containerLogout" href="/addFood">
                     Agregar alimento
@@ -107,7 +107,7 @@ function RightMenu(props) {
                 ""
               )}
               {user.userData &&
-              user.userData.email === "facundo_loberse@hotmail.com" ? (
+              user.userData.email === "santiago.ottolini98@gmail.com" ? (
                 <Menu.Item key="deleteFood">
                   <a className="containerLogout" href="/deleteFood">
                     Borrar alimento
@@ -117,7 +117,7 @@ function RightMenu(props) {
                 ""
               )}
               {user.userData &&
-              user.userData.email === "facundo_loberse@hotmail.com" ? (
+              user.userData.email === "santiago.ottolini98@gmail.com" ? (
                 <Menu.Item key="addReward">
                   <a className="containerLogout" href="/addReward">
                     Agregar local
@@ -127,7 +127,7 @@ function RightMenu(props) {
                 ""
               )}
               {user.userData &&
-              user.userData.email === "facundo_loberse@hotmail.com" ? (
+              user.userData.email === "santiago.ottolini98@gmail.com" ? (
                 <Menu.Item key="deleteReward">
                   <a className="containerLogout" href="/deleteReward">
                     Borrar local
@@ -137,7 +137,7 @@ function RightMenu(props) {
                 ""
               )}
               {user.userData &&
-              user.userData.email === "facundo_loberse@hotmail.com" ? (
+              user.userData.email === "santiago.ottolini98@gmail.com" ? (
                 <Menu.Item key="Audits">
                   <a className="containerLogout" href="/Audits">
                     Auditoria
@@ -147,16 +147,6 @@ function RightMenu(props) {
                 ""
               )}
 
-              {user.userData &&
-              user.userData.email === "facundo_loberse@hotmail.com" ? (
-                <Menu.Item key="Backup">
-                  <a className="containerLogout" href="/Backup">
-                    Backup
-                  </a>
-                </Menu.Item>
-              ) : (
-                ""
-              )}
               <Menu.Item key="logout">
                 <a className="containerLogout" onClick={logoutHandler}>
                   Logout

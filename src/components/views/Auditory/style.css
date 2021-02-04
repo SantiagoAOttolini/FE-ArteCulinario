@@ -1,0 +1,22 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td,
+  th,
+  tr {
+    border: 2px solid #c7b6b6;
+    text-align: left;
+  }
+.userData{
+    font-size: 20px;
+    color: black;
+}
+  tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+
+  

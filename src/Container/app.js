@@ -20,7 +20,6 @@ import Information from '../components/views/Food Compare/Information/informatio
 import AddFood from '../components/views/Food Compare/AdminAddFood/addFood'
 import AddReward from '../components/views/Benefits/AdminAddRewards/adminAddReward'
 import Auditory from '../components/views/Auditory/index'
-import Backup from '../components/views/Backup/index'
 import Benefits from '../components/views/Benefits/Benefits/benefits'
 import QRverify from '../components/views/Benefits/QR Verify/QRVerify'
 import DeleteFood from '../components/views/Food Compare/AdminDeleteFood/deleteFood'
@@ -96,7 +95,6 @@ class App extends Component {
             />
             <Route exact path='/Audits' component={Auth(Auditory, true)} />
             <Route exact path='/AddReward' component={Auth(AddReward, true)} />
-            <Route exact path='/Backup' component={Auth(Backup, true)} />
           </div>
         </Suspense>
       </Switch>

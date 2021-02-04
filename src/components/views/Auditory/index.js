@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Card, Avatar, Col, Typography, Row } from "antd";
 import axios from "axios";
+import "./style.css"
 
 function Auditory() {
   const [Data, setData] = useState([]);
@@ -25,7 +25,7 @@ function Auditory() {
 
   const renderCards = Data.map((user, index) => {
     return (
-      <tr key={index}>
+      <tr className="userData" key={index}>
         <td className="text-center">{user.user_id}</td>
         <td>
           <div className="d-flex justify-content-center">{user.username}</div>
@@ -66,17 +66,23 @@ function Auditory() {
             </h5>
           </div>
         </div>
-        <table className="ml-5">
+        <div className="mt-5 d-flex justify-content-center">
+            <h1>|Auditoria login|</h1>
+          </div>
+        <div className="d-flex justify-content-center">
+        <table className="ml-5 mr-5">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Usuario</th>
-              <th>Fecha login</th>
-              <th>Fecha logout</th>
+              <th><h4 className="text-info text-center">ID</h4></th>
+              <th><h4 className="text-info text-center">Usuario</h4></th>
+              <th><h4 className="text-info text-center">Fecha login</h4></th>
+              <th><h4 className="text-info text-center">Fecha logout</h4></th>
             </tr>
           </thead>
           <tbody>{renderCards}</tbody>
         </table>
+        </div>
+        
       </div>
     </div>
   );
