@@ -70,13 +70,13 @@ function Auditory() {
             <h1>|Auditoria login|</h1>
           </div>
         <div className="d-flex justify-content-center">
-        <table className="ml-5 mr-5">
+        <table className="tableAuditory ml-5 mr-5">
           <thead>
-            <tr>
-              <th><h4 className="text-info text-center">ID</h4></th>
-              <th><h4 className="text-info text-center">Usuario</h4></th>
-              <th><h4 className="text-info text-center">Fecha login</h4></th>
-              <th><h4 className="text-info text-center">Fecha logout</h4></th>
+            <tr className="trAuditory">
+              <th className="thAuditory"><h4 className="text-info text-center">ID</h4></th>
+              <th className="thAuditory"><h4 className="text-info text-center">Usuario</h4></th>
+              <th className="thAuditory"><h4 className="text-info text-center">Fecha login</h4></th>
+              <th className="thAuditory"><h4 className="text-info text-center">Fecha logout</h4></th>
             </tr>
           </thead>
           <tbody>{renderCards}</tbody>

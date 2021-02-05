@@ -12,6 +12,8 @@ import Reducer from "./_reducers";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import promiseMiddleware from "redux-promise";
+import ParticlesBg from "particles-bg";
+import LandingPage   from "./components/views/LandingPage/landingPage";
 import ReduxThunk from "redux-thunk";
 
 const middleware = [thunk]; 
@@ -33,9 +35,11 @@ ReactDOM.render(
   >
     <BrowserRouter>
       <App />
+      {/* <ParticlesBg type="cobweb" bg={true}/> */}
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
+  
 );
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

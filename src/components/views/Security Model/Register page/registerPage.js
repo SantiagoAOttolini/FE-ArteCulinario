@@ -4,8 +4,9 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { registerUser } from '../../../../_actions/user_actions'
 import { useDispatch } from 'react-redux'
-import './style.css'
+import ParticlesBg from "particles-bg";
 import { Form, Input, Button } from 'antd'
+import './style.css'
 
 function RegisterPage(props) {
   const dispatch = useDispatch()
@@ -74,6 +75,7 @@ function RegisterPage(props) {
             </div>
             <div className='d-flex justify-content-center'>
               <Form className='w-25' onSubmit={handleSubmit}>
+              <ParticlesBg type="square" bg={true}/>
                 <Form.Item required label='Name'>
                   <Input
                     id='name'

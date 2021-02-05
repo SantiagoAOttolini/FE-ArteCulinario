@@ -7,6 +7,7 @@ import { Form, Icon, Input, Button, Checkbox, Typography } from "antd";
 import { useDispatch } from "react-redux";
 import {useSelector} from "react-redux"
 import { useCookies } from 'react-cookie'
+import ParticlesBg from "particles-bg";
 import axios from "axios"
 import "./style.css";
 
@@ -112,6 +113,7 @@ function LoginPage(props) {
           <div className="mt-5 d-flex justify-content-center flex-column">
             <div className="d-flex justify-content-center">
               <Title level={2}>Log In</Title>
+              <ParticlesBg type="square" bg={true}/>
             </div>
 
             <div className="d-flex justify-content-center">

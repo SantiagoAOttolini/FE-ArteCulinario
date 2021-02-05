@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import ParticlesBg from "particles-bg";
 import { useSelector } from 'react-redux'
 
 const ResetPassword = props => {
@@ -19,6 +20,7 @@ const ResetPassword = props => {
 
   return (
     <form onSubmit={submitHandler}>
+      <ParticlesBg type="square" bg={true}/>
       <h3 className='text-center mt-5'>Ingrese su nueva contraseña</h3>
       <div className='d-flex justify-content-center mt-4'>
         <input

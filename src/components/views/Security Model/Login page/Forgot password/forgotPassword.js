@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import ParticlesBg from "particles-bg";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('')
@@ -37,6 +38,7 @@ const ForgotPassword = () => {
   } else {
     body = (
       <form className='mt-5' onSubmit={submitHandler}>
+        <ParticlesBg type="square" bg={true}/>
         <h3 className='text-center'>
           Ingrese su correo electronico para recuperar su contraseña
         </h3>
