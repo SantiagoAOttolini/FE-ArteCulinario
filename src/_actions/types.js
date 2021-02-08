@@ -20,3 +20,6 @@ export const FETCH_REWARDS = 'FETCH_REWARDS'
 export const FILTER_REWARDS_BY_CATEGORY = 'FILTER_REWARDS_BY_CATEGORY'
 export const ADD_REWARD = 'ADD_REWARD'
 export const DELETE_REWARD = 'DELETE_REWARD'
+
+//////////// PAYS ACTIONS ///////////////
+export const ADD_CASH_PAY = 'add_cash_pay'

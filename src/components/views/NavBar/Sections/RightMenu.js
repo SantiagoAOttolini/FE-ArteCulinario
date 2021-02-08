@@ -1,81 +1,81 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { Menu } from "antd";
-import axios from "axios";
-import { USER_SERVER } from "../../Security Model/Config";
-import { withRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { Cookies } from "react-cookie";
-import "../style.css";
+import React from 'react'
+import { Menu } from 'antd'
+import axios from 'axios'
+import { USER_SERVER } from '../../Security Model/Config'
+import { withRouter } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Cookies } from 'react-cookie'
+import '../style.css'
 
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+const SubMenu = Menu.SubMenu
+const MenuItemGroup = Menu.ItemGroup
 
 function RightMenu(props) {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user)
 
   const userAuditory = () => {
-    var dt = new Date();
+    var dt = new Date()
     var time =
       dt.getDate() +
-      "/" +
+      '/' +
       (dt.getMonth() + 1) +
-      "/" +
+      '/' +
       dt.getFullYear() +
-      "/" +
+      '/' +
       dt.getHours() +
-      ":" +
+      ':' +
       dt.getMinutes() +
-      ":" +
-      dt.getSeconds();
+      ':' +
+      dt.getSeconds()
 
-    const user_id = user.userData._id;
-    const username = user.userData.name;
-    const cookies = new Cookies();
-    const loginDate = cookies.get("logDate");
-    const logoutDate = time;
+    const user_id = user.userData._id
+    const username = user.userData.name
+    const cookies = new Cookies()
+    const loginDate = cookies.get('logDate')
+    const logoutDate = time
 
     const body = {
       user_id,
       username,
       loginDate,
-      logoutDate,
-    };
-    console.log(body);
+      logoutDate
+    }
+    console.log(body)
     axios
-      .post("http://localhost:5000/api/admin/addAuditoryUser", body)
-      .then((res) => {
+      .post('http://localhost:5000/api/admin/addAuditoryUser', body)
+      .then(res => {
         if (res.success !== false) {
-          console.log("Auditoria de login guardada");
-          cookies.remove("logDate");
+          console.log('Auditoria de login guardada')
+          cookies.remove('logDate')
         } else {
-          console.log("error, no se pudo guardar nada, pedazo de virgo");
+          console.log('error, no se pudo guardar nada, pedazo de virgo')
         }
-      });
-  };
+      })
+  }
 
   const logoutHandler = () => {
-    axios.get(`${USER_SERVER}/logout`).then((response) => {
+    axios.get(`${USER_SERVER}/logout`).then(response => {
       if (response.status === 200) {
         userAuditory()
-        props.history.push("/login");
+        props.history.push('/login')
       } else {
-        alert("Fallo el login");
+        alert('Fallo el login')
       }
-    });
-  };
+    })
+  }
 
   if (user.userData && !user.userData.isAuth) {
     return (
       <Menu mode={props.mode}>
-        <Menu.Item key="mail">
-          <a href="/login">Entrar</a>
+        <Menu.Item key='mail'>
+          <a href='/login'>Entrar</a>
         </Menu.Item>
-        <Menu.Item key="app">
-          <a href="/register">Registrarse</a>
+        <Menu.Item key='app'>
+          <a href='/register'>Registrarse</a>
         </Menu.Item>
       </Menu>
-    );
+    )
   } else {
     return (
       <div>
@@ -84,90 +84,102 @@ function RightMenu(props) {
             title={
               <span>
                 <img
-                  className="imgAvatar"
-                  id="userAvatar"
+                  className='imgAvatar'
+                  id='userAvatar'
                   src={user.userData && user.userData.image}
                 ></img>
               </span>
             }
           >
-            <MenuItemGroup className="mr-5" title="">
-              <Menu.Item key="setting:2">
-                <a href="/changePassword">Cambiar contraseña</a>
+            <MenuItemGroup className='mr-5' title=''>
+              <Menu.Item key='setting:2'>
+                <a href='/changePassword'>Cambiar contraseña</a>
               </Menu.Item>
 
               {user.userData &&
-              user.userData.email === "santiago.ottolini98@gmail.com" ? (
-                <Menu.Item key="addFood">
-                  <a className="containerLogout" href="/addFood">
+              user.userData.email === 'santiago.ottolini98@gmail.com' ? (
+                <Menu.Item key='addFood'>
+                  <a className='containerLogout' href='/addFood'>
                     Agregar alimento
                   </a>
                 </Menu.Item>
               ) : (
-                ""
+                ''
               )}
               {user.userData &&
-              user.userData.email === "santiago.ottolini98@gmail.com" ? (
-                <Menu.Item key="deleteFood">
-                  <a className="containerLogout" href="/deleteFood">
+              user.userData.email === 'santiago.ottolini98@gmail.com' ? (
+                <Menu.Item key='deleteFood'>
+                  <a className='containerLogout' href='/deleteFood'>
                     Borrar alimento
                   </a>
                 </Menu.Item>
               ) : (
-                ""
+                ''
               )}
               {user.userData &&
-              user.userData.email === "santiago.ottolini98@gmail.com" ? (
-                <Menu.Item key="addReward">
-                  <a className="containerLogout" href="/addReward">
+              user.userData.email === 'santiago.ottolini98@gmail.com' ? (
+                <Menu.Item key='addReward'>
+                  <a className='containerLogout' href='/addReward'>
                     Agregar local
                   </a>
                 </Menu.Item>
               ) : (
-                ""
+                ''
               )}
+
               {user.userData &&
-              user.userData.email === "santiago.ottolini98@gmail.com" ? (
-                <Menu.Item key="deleteReward">
-                  <a className="containerLogout" href="/deleteReward">
+              user.userData.email === 'santiago.ottolini98@gmail.com' ? (
+                <Menu.Item key='addCashPay'>
+                  <a className='containerLogout' href='/addCashPay'>
+                    Agregar Pagos en Efectivo
+                  </a>
+                </Menu.Item>
+              ) : (
+                ''
+              )}
+
+              {user.userData &&
+              user.userData.email === 'santiago.ottolini98@gmail.com' ? (
+                <Menu.Item key='deleteReward'>
+                  <a className='containerLogout' href='/deleteReward'>
                     Borrar local
                   </a>
                 </Menu.Item>
               ) : (
-                ""
+                ''
               )}
               {user.userData &&
-              user.userData.email === "santiago.ottolini98@gmail.com" ? (
-                <Menu.Item key="Audits">
-                  <a className="containerLogout" href="/Audits">
+              user.userData.email === 'santiago.ottolini98@gmail.com' ? (
+                <Menu.Item key='Audits'>
+                  <a className='containerLogout' href='/Audits'>
                     Auditoria
                   </a>
                 </Menu.Item>
               ) : (
-                ""
+                ''
               )}
 
-              <Menu.Item key="logout">
-                <a className="containerLogout" onClick={logoutHandler}>
+              <Menu.Item key='logout'>
+                <a className='containerLogout' onClick={logoutHandler}>
                   Logout
                 </a>
               </Menu.Item>
             </MenuItemGroup>
           </SubMenu>
           <Menu.Item>
-            <div className="containerLogin">
-              <div className="loginName btn btn-info  text-white rounded h4 text-left">
+            <div className='containerLogin'>
+              <div className='loginName btn btn-info  text-white rounded h4 text-left'>
                 <p>{user.userData && user.userData.name}</p>
               </div>
-              <div className="loginName btn btn-info  text-white rounded h4 text-left ml-2">
+              <div className='loginName btn btn-info  text-white rounded h4 text-left ml-2'>
                 <p>{user.userData && user.userData.accountType}</p>
               </div>
             </div>
           </Menu.Item>
         </Menu>
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(RightMenu);
+export default withRouter(RightMenu)

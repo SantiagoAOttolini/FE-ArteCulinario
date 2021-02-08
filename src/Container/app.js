@@ -24,6 +24,7 @@ import Benefits from '../components/views/Benefits/Benefits/benefits'
 import QRverify from '../components/views/Benefits/QR Verify/QRVerify'
 import DeleteFood from '../components/views/Food Compare/AdminDeleteFood/deleteFood'
 import DeleteReward from '../components/views/Benefits/AdminDeleteBenefits/deleteBenefits'
+import addCashPay from '../components/views/Pays/addCashPay'
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -95,6 +96,11 @@ class App extends Component {
             />
             <Route exact path='/Audits' component={Auth(Auditory, true)} />
             <Route exact path='/AddReward' component={Auth(AddReward, true)} />
+            <Route
+              exact
+              path='/AddCashPay'
+              component={Auth(addCashPay, true)}
+            />
           </div>
         </Suspense>
       </Switch>
