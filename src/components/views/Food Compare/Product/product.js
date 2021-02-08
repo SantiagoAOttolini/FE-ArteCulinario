@@ -19,14 +19,6 @@ const Product = ({ product, compare }) => (
         </div>
       </div>
     </div>
-    <div className="btnDelete d-flex justify-content-center">
-    <button
-      className='mb-3 btn btn-danger btn-xs'
-      onClick={()=>this.props.deleteProduct(product._id)}
-    >
-      Eliminar Alimento
-    </button>
-    </div>
     
   </div>
 )
