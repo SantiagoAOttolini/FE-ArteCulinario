@@ -3,3 +3,7 @@
     height: 5px;
     margin-top: -12px;
   }
+  textarea{
+    width:415px;
+    border: 1px solid rgb(223, 220, 220);
+  }

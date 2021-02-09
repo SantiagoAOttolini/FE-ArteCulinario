@@ -4,17 +4,29 @@ import Filter from "../Filter/filter";
 import { connect } from "react-redux";
 import { filterRewardsByCategory } from "../../../../_actions/rewards_actions";
 
+//Container / Branch / View Pattern 
+const TitleCatalog = () => (
+  <div className="d-flex justify-content-center mt-5">
+    <h2>Catalogo de locales</h2>
+  </div>
+);
+const ContainerFilter = () => <div><Filter/></div>;
+const ContainerReward = () => <div><RewardList/></div>;
+
+const CatalogView = () => {
+  return (
+    <div>
+      <div><TitleCatalog/></div>
+      <div><ContainerFilter/></div>
+      <div><ContainerReward/></div>
+    </div>
+    
+  )
+};
+
 class Catalog extends Component {
   render() {
-    return (
-      <div>
-        <div className="d-flex justify-content-center mt-5">
-          <h2>Catalogo de locales</h2>
-        </div>
-        <Filter></Filter>
-        <RewardList />)
-      </div>
-    );
+    return <CatalogView/>
   }
 }
 

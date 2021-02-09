@@ -9,8 +9,8 @@ class barList extends Component {
     this.props.fetchRewards();
   }
   render() {
-    return (
-      <>
+    const BarList = () => (
+      <div>
         <div className="mt-5 d-flex justify-content-center">
           <h3 className="titleDelete rounded text-center">Borrar locales</h3>
         </div>
@@ -22,9 +22,9 @@ class barList extends Component {
               ))}
           </div>
         </div>
-        
-      </>
+      </div>
     );
+    return <BarList/>;
   }
 }
 

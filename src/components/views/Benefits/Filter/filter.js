@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { filterRewardsByCategory } from '../../../../_actions/rewards_actions'
 
+//Container / Branch / View Pattern 
 class Filter extends Component {
   render() {
-    return (
+    const FilterCatalog = () => (
       <div id='category-combobox-box'>
         <div className=" d-flex justify-content-center">
         <label className='tex-center'>
@@ -27,7 +28,8 @@ class Filter extends Component {
         </label>
         </div>
       </div>
-    )
+    );
+    return <FilterCatalog/>
   }
 }
 

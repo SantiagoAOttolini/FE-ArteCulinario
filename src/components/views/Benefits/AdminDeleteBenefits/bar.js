@@ -15,7 +15,7 @@ class bar extends Component {
 
   render() {
     const reward = this.props.reward;
-    const rewardItem = (
+    const Bar = () => (
       <div className="col-md-4" key={reward._id}>
         <div className="mb-5 thumbnail listOfBenefits">
             <img
@@ -35,8 +35,7 @@ class bar extends Component {
         </div>
       </div>
     );
-
-    return <div className="listOfRewards">{rewardItem}</div>;
+    return <div className="listOfRewards"><Bar/></div>;
   }
 }
 

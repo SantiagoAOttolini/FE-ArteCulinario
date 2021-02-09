@@ -280,7 +280,7 @@ function AddFood(props) {
                 </Form.Item>
 
                 <Form.Item required label="Ventajas">
-                  <Input
+                  <textarea
                     id="adventages"
                     placeholder="Escribe la ventaja del alimento"
                     type="text"
@@ -299,7 +299,7 @@ function AddFood(props) {
                 </Form.Item>
 
                 <Form.Item required label="Descripcion">
-                  <Input
+                  <textarea
                     id="description"
                     placeholder="Escribe la descripcion del alimento"
                     type="text"
