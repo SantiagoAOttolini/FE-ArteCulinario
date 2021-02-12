@@ -2,13 +2,14 @@ import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchGyms } from "../../../../_actions/gym_actions";
-
+import axios from "axios";
 
 class SingleGym extends Component {
   constructor(props) {
     super(props);
     const id = this.props.match.params.id;
     this.state = {
+      total: 0,
       gym: {},
       id,
       loading: true,
@@ -39,6 +40,27 @@ class SingleGym extends Component {
   }
 
   render() {
+    const gym = this.state.gym;
+    const price = gym.price;
+    const name = gym.name;
+    
+    const submitHandler = (e) => {
+      e.preventDefault();
+
+      const body = {
+        price,
+        name,
+      };
+      axios
+        .post("http://localhost:5000/api/gymStrategy/gymContextPrice", body)
+        .then((res) => {
+          if (res.data.success !== false) {
+            this.setState({ total: res.data.data });
+          } else {
+            alert("No se pudieron obtener datos");
+          }
+        });
+    };
     const LoadingGyms = () => (
       <div className="d-flex justify-content-center">
         <h2>Cargando gimnasios...</h2>
@@ -79,8 +101,10 @@ class SingleGym extends Component {
           <h4>¿Te gustaria arrancar a entrenar desde ahora?</h4>
         </div>
         <div className="d-flex justify-content-center">
-          <button>Cotizar promocion</button>
+          <button onClick={submitHandler}>Cotizar promocion</button>
         </div>
+
+        {this.state.total !== 0 ? <div>{this.state.total}</div> : ""}
 
         <div className="d-flex justify-content-center">
           {
@@ -93,7 +117,7 @@ class SingleGym extends Component {
         </div>
       </div>
     );
-    const gym = this.state.gym;
+
     if (this.state.loading) {
       return <LoadingGyms />;
     }
