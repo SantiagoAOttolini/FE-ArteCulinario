@@ -13,7 +13,7 @@ class RewardList extends Component {
         <div className="rowBenefit">
           {this.props.rewards &&
             this.props.rewards.map((reward) => (
-              <Reward key={reward._id} RReward={reward} />
+              <Reward key={reward._id} Reward={reward} />
             ))}
         </div>
       </div>

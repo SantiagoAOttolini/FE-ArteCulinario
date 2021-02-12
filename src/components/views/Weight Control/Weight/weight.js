@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import Range from "../Range/range";
 import Departure from "../Departure/departure";
+import { Link } from "react-router-dom";
 
 class Index extends Component {
   constructor(props) {
@@ -52,6 +53,13 @@ class Index extends Component {
           </div>
         </form>
         <Departure data={this.state} />
+        <div className="d-flex justify-content-center">
+          <Link
+            to={"/gym"}
+          >
+            <button className="btn btn-info">Gimnasios asociados</button>
+          </Link>
+        </div>
       </div>
     );
   }

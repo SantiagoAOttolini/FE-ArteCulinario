@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //Container / Branch / View Pattern
 export default class Reward extends Component {
   render() {
-    const reward = this.props.RReward;
+    const reward = this.props.Reward;
     const RewardFucntion = () => (
       <div className="col-md-4" key={reward._id}>
       <div className="mt-5 mb-5 thumbnail listOfBenefits">

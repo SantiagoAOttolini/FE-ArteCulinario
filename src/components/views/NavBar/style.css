@@ -7,7 +7,11 @@
   box-shadow: 0 0 30px #f3f1f1;
   background-color: white;
 }
-
+.imgLogo{
+  margin-top: -20px;
+  margin-right: 150px;
+  margin-left: -40px;
+}
 .menu__logo {
   width: 150px;
   float: left;

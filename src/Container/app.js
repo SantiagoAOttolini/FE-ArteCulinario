@@ -25,6 +25,8 @@ import QRverify from '../components/views/Benefits/QR Verify/QRVerify'
 import DeleteFood from '../components/views/Food Compare/AdminDeleteFood/deleteFood'
 import DeleteReward from '../components/views/Benefits/AdminDeleteBenefits/deleteBenefits'
 import addCashPay from '../components/views/Pays/addCashPay'
+import GymList from '../components/views/Weight Control/Gym/gymList'
+import SingleGym from '../components/views/Weight Control/Gym/singleGym'
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -54,6 +56,8 @@ class App extends Component {
             />
             <Route exact path='/qrverify' component={Auth(QRverify, null)} />
             <Route exact path='/addFood' component={Auth(AddFood, true)} />
+            <Route exact path='/gym' component={Auth(GymList, true)} />
+            <Route exact path='/gym/:id' component={Auth(SingleGym, true)} />
             <Route
               exact
               path='/deleteFood'

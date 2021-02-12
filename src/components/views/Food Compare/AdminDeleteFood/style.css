@@ -28,3 +28,11 @@
   .btnDelete{
     width: 250px;
   }
+  .titleDelete{
+    width: 300px;
+    height: 45px;
+    margin-bottom: -50px;
+    border: none;
+    background-color: rgb(89, 165, 200);
+    color: white;
+  }

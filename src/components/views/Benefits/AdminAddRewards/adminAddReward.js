@@ -4,6 +4,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { addReward } from '../../../../_actions/rewards_actions'
 import { useDispatch } from 'react-redux'
+import "./style.css"
 
 import { Form, Input, Button } from 'antd'
 
@@ -71,12 +72,11 @@ function AddReward(props) {
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset
         } = props
         return (
           <div className='mt-5 d-flex justify-content-center flex-column'>
             <div className='mb-4 d-flex justify-content-center'>
-              <h2 className='text-center'>Agregar Local de gastronomia</h2>
+              <h2 className='titleRewards text-center rounded mb-2'>Agregar local de gastronomia</h2>
             </div>
             <div className='d-flex justify-content-center'>
               <Form className='w-25' onSubmit={handleSubmit}>
