@@ -18,6 +18,7 @@ import Catalogrewards from '../components/views/Benefits/Catalog/catalog'
 import SingleReward from '../components/views/Benefits/Single rewards/singleReward'
 import Information from '../components/views/Food Compare/Information/information'
 import AddFood from '../components/views/Food Compare/AdminAddFood/addFood'
+import AddGym from '../components/views/Benefits/AdminAddGym/adminAddGym'
 import AddReward from '../components/views/Benefits/AdminAddRewards/adminAddReward'
 import Auditory from '../components/views/Auditory/index'
 import Benefits from '../components/views/Benefits/Benefits/benefits'
@@ -100,6 +101,7 @@ class App extends Component {
             />
             <Route exact path='/Audits' component={Auth(Auditory, true)} />
             <Route exact path='/AddReward' component={Auth(AddReward, true)} />
+            <Route exact path='/addGYM' component={Auth(AddGym, true)} />
             <Route
               exact
               path='/AddCashPay'

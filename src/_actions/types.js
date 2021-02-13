@@ -25,3 +25,4 @@ export const DELETE_REWARD = 'DELETE_REWARD'
 export const ADD_CASH_PAY = 'add_cash_pay'
 //////////// GYM ACTIONS ///////////////
 export const FETCH_GYM = 'FETCH_GYM'
+export const ADD_GYM = 'FETCH_GYM'

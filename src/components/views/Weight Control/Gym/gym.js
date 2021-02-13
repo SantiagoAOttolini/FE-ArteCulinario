@@ -8,9 +8,6 @@ export default class Gym extends Component {
     const Gym = () => (
       <div className="d-flex justify-content-center">
         <div className="mt-5 mb-5  listOfBenefits">
-          <div className="mb-4 d-flex justify-content-center">
-            <h2 className="titleAddFood text-center rounded mb-2">Gimnasios</h2>
-          </div>
           <img
           className="rounded"
           src={`http://localhost:5000/${gym.photo}`}
@@ -18,7 +15,7 @@ export default class Gym extends Component {
           width="250"
           height="200"
         />
-        <div className="mt-4">
+        <div className="mt-4 d-flex justify-content-center">
           <Link to={`/gym/${gym._id}`}>
             <button className="ml-3 btn btn-info  text-white rounded h5">
               Ver informacion

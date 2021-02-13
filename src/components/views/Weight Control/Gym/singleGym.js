@@ -43,7 +43,7 @@ class SingleGym extends Component {
     const gym = this.state.gym;
     const price = gym.price;
     const name = gym.name;
-    
+
     const submitHandler = (e) => {
       e.preventDefault();
 
@@ -96,15 +96,30 @@ class SingleGym extends Component {
         <div className="d-flex justify-content-center">
           <h5>{gym.adress}</h5>
         </div>
+        <div className="d-flex justify-content-center mt-2">
+          <h4 className="text-center rounded titleAtributtes">Precio</h4>
+        </div>
+        <div className="d-flex justify-content-center">
+          <h5>{gym.price}</h5>
+        </div>
 
         <div className="mt-5 d-flex justify-content-center">
           <h4>¿Te gustaria arrancar a entrenar desde ahora?</h4>
         </div>
-        <div className="d-flex justify-content-center">
-          <button onClick={submitHandler}>Cotizar promocion</button>
+        <div className="mt-1 d-flex justify-content-center">
+          <h5>Anotate antes del 17 de marzo y consegui esta oferta !</h5>
         </div>
 
-        {this.state.total !== 0 ? <div>{this.state.total}</div> : ""}
+        <div className="mt-4 d-flex justify-content-center">
+          <button className="btn btn-info" onClick={submitHandler}>
+            Cotizar promocion
+          </button>
+        </div>
+        <div className="mt-3 d-flex justify-content-center">
+          <h4>
+            {this.state.total !== 0 ? <div>{"$" + this.state.total}</div> : ""}
+          </h4>
+        </div>
 
         <div className="d-flex justify-content-center">
           {
