@@ -11,6 +11,9 @@
 .product:hover {
   box-shadow: 0 13px 21px -5px rgba(0, 0, 0, 0.2);
 }
+.containerIcons{
+  box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
+}
 .product:hover .image_overlay {
   opacity: 0.7;
 }

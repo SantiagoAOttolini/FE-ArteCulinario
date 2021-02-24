@@ -38,11 +38,14 @@ class Home extends Component {
       <div className="home mt-5">
         <div className="row">
           <div className="col-12">
-            <h2 className="mb-3">Comparar Alimentos</h2>
-            <div className="d-flex justify-content-center ">
+            <div className="titleCompare container d-flex justify-content-center rounded mb-4">
+            <h2 className="text-white mb-3">Comparar Alimentos</h2>
+            </div>
+            
+            <div className="mb-4 d-flex justify-content-center ">
               <form>
                 <input
-                  className="form-control form-control-xs text-center"
+                  className="inputSerch form-control form-control-xs text-center"
                   type="text"
                   placeholder="Buscar alimento"
                   onChange={this.serchHandler}

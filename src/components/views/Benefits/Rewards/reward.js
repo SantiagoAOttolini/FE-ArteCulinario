@@ -9,7 +9,7 @@ export default class Reward extends Component {
       <div className="col-md-4" key={reward._id}>
         <div className="mt-5 mb-5 thumbnail listOfBenefits">
           <img
-            className="rounded"
+            className="photoReward rounded"
             src={`http://localhost:5000/${reward.photo}`}
             alt="photo"
             width="250"

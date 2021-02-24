@@ -13,6 +13,7 @@
   padding: 20px;
   background: #f4f4f4;
   border: #ccc solid 1px;
+  box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
 }
 
 /* Range */

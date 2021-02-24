@@ -11,7 +11,7 @@ const LandingPage = () => (
     <ParticlesBg type="cobweb" bg={true} />
     <CssBaseline />
     <div className="main">
-      <span className="text1 mt-5 display-1">Bienvenidos</span>
+      <span className="text1 container d-flex justify-content-center mt-5 display-1">Bienvenidos</span>
       <span className="text2 text-info">Arte Culinario</span>
     </div>
   </div>

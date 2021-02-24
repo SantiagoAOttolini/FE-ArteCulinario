@@ -40,24 +40,27 @@ class Index extends Component {
 
   render() {
     return (
-      <div className="Index">
-        <h1 className="text-center">Calculadora de BMI</h1>
-        <form>
-          <div>
-            <label>Altura</label>
-            <Range value={this.state.height} onChange={this.heightChange} />
-          </div>
-          <div>
-            <label>Peso</label>
-            <Range value={this.state.weight} onChange={this.weightChange} />
-          </div>
-        </form>
-        <Departure data={this.state} />
-        <div className="d-flex justify-content-center">
+      <div>
+        <div className="containerWeight Index">
+          <h1 className="text-center">Calculadora de BMI</h1>
+          <form>
+            <div>
+              <label>Altura</label>
+              <Range value={this.state.height} onChange={this.heightChange} />
+            </div>
+            <div>
+              <label>Peso</label>
+              <Range value={this.state.weight} onChange={this.weightChange} />
+            </div>
+          </form>
+          <Departure data={this.state} />
+        </div>
+        <div className="mt-4 d-flex justify-content-center">
           <Link to={"/gym"}>
             <button className="btn btn-info">Gimnasios asociados</button>
           </Link>
         </div>
+        <br></br>
       </div>
     );
   }

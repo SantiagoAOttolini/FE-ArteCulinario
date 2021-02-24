@@ -7,8 +7,8 @@ import "./style.css"
 
 //Container / Branch / View Pattern
 const TitleCatalog = () => (
-  <div className="containerCatalog d-flex justify-content-center mt-5">
-    <h2>Catalogo de locales</h2>
+  <div className="containerCatalog container mb-5 rounded d-flex justify-content-center mt-5">
+    <h2 className="text-white">Catalogo de locales</h2>
   </div>
 );
 const ContainerFilter = () => (

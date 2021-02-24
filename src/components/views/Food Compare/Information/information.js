@@ -50,16 +50,16 @@ class Informacion extends Component {
         <div className="mb-5 mt-2 d-flex justify-content-center">
           <img src={`http://localhost:5000/${product.photo}`}></img>
         </div>
-        <div className="textDescription d-flex justify-content-center">
+        <div className="textDescription container d-flex justify-content-center">
           <h5>{product.description}</h5>
         </div>
-        <div className="mt-4 d-flex justify-content-center">
+        <div className="mt-5 d-flex justify-content-center">
           <h4 className="titleAdventages text-center rounded">Ventajas</h4>
         </div>
-        <div className="d-flex justify-content-center">
-          <h5 className="textAdventages">{product.adventages}</h5>
+        <div className="textAdventages container d-flex justify-content-center">
+          <h5>{product.adventages}</h5>
         </div>
-        <div className="mt-4 d-flex justify-content-center">
+        <div className="mt-5 d-flex justify-content-center">
           <h4 className="titleCategory text-center rounded">Categoria</h4>
         </div>
         <div className="d-flex justify-content-center">

@@ -5,6 +5,7 @@
   border: none;
   background-color: rgb(89, 165, 200);
   color: white;
+  box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
 }
 .titleAdventages,.titleCategory{
   width: 200px;
@@ -14,6 +15,6 @@
   color: white;
 }
 .textDescription, .textAdventages{
-  margin-left: 400px;
-  margin-right: 400px;
+  width: 800px;
+  box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
 }

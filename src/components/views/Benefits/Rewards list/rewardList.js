@@ -9,8 +9,8 @@ class RewardList extends Component {
   }
   render() {
     const RewardListConst = () => (
-      <div className="mr-5 ml-5 containerImg">
-        <div className="rowBenefit">
+      <div className="mr-5 ml-5">
+        <div className="container rowBenefit">
           {this.props.rewards &&
             this.props.rewards.map((reward) => (
               <Reward key={reward._id} Reward={reward} />

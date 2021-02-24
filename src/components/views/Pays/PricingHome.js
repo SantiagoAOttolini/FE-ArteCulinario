@@ -43,8 +43,8 @@ const PricingHome = (props) => {
       <div className="d-flex justify-content-center container mt-4 mb-4  rounded titlePrice">
         <h2>{product.name}</h2>
       </div>
-      <div className="d-flex justify-content-center">
-        <h3>Oferta exclusiva: ${product.price}</h3>
+      <div className="textPrice container rounded mb-5 d-flex justify-content-center">
+        <h3>Oferta exclusiva: {product.price} USD</h3>
       </div>
       <div className="mt-3 container imgPrice"></div>
 
@@ -61,7 +61,7 @@ const PricingHome = (props) => {
       </div>
 
       <div className="d-flex justify-content-center">
-        <a className="mt-4 w-25 text-info" href="https://mpago.la/1kAMks2">
+        <a className="mt-4 w-25 text-info" href="https://mpago.la/174uCAQ">
           <button className="btnMercadoPago rounded">Mercado pago</button>
         </a>
       </div>

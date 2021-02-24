@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteProduct } from "../../../../_actions/product";
-import { useDispatch } from "react-redux";
 import "./styles.css";
 
 const Product = ({ product, compare }) => (
   <div key={product.id} className="col-sm-6 col-md-3">
-    <div className={"product " + (product.compare ? "compare" : "")}>
+    <div className={"containerIcons product " + (product.compare ? "compare" : "")}>
       <img src={`http://localhost:5000/${product.photo}`} alt={product.name} />
       <div className="image_overlay" />
       <div className="view_details" onClick={() => compare(product)}>

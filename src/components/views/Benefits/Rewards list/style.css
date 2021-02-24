@@ -4,11 +4,9 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: auto;
     margin-bottom: 20px;
   }
-  .containerImg{
-    margin-top: 50px;
+  .photoReward{
     box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
   }
   .titleBenefits{

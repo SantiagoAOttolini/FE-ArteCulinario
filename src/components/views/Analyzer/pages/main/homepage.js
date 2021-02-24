@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/styles";
 import Button from "@material-ui/core/Button";
-import classNames from "classnames";
 import { Paper, Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
@@ -94,8 +92,8 @@ class HomePage extends React.Component {
 
       <div>
         <div className="mt-4"></div>
-        <div className="ml-4 mr-4 mb-5">
-          <Paper>
+        <div className=" ml-4 mr-4 mb-5">
+          <Paper className="asd">
             <Grid container spacing={24}>
               <Grid item xs={12}>
                 <Typography align="center" variant="h6" color="inithial">

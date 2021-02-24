@@ -46,13 +46,14 @@ class SingleReward extends Component {
     );
     const ShopsInformations = () => (
       <div className="container mt-3">
-        <div className="d-flex justify-content-center">
+        <div className="mb-4 d-flex justify-content-center">
           <h4 className="titleBenefits text-center rounded mt-3">
             {reward.name}
           </h4>
         </div>
         <div className="d-flex justify-content-center">
           <img
+          className="containerReward"
             src={`http://localhost:5000/${reward.photo}`}
             style={{ maxHeight: "30rem" }}
             alt="reward"
@@ -63,22 +64,22 @@ class SingleReward extends Component {
             <strong>{reward.description}</strong>
           </h3>
         </div>
-        <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">Direccion</h4>
+        <div className=" d-flex justify-content-center mt-2">
+          <h4 className="titleDescription text-center rounded titleAtributtes">Direccion</h4>
         </div>
         <div className="d-flex justify-content-center">
           <h5>{reward.Location}</h5>
         </div>
-        <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">
+        <div className="mt-4 d-flex justify-content-center mt-2">
+          <h4 className="titleHourOfAtention  text-center rounded titleAtributtes">
             Horario de atencion
           </h4>
         </div>
         <div className="d-flex justify-content-center">
           <h5>{reward.HoursOfAtention}</h5>
         </div>
-        <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">Combos</h4>
+        <div className="mt-4 d-flex justify-content-center mt-2">
+          <h4 className="titleCombo text-center rounded titleAtributtes">Combos</h4>
         </div>
         <div className="d-flex justify-content-center">
           <div>
