@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
     case FILTER_REWARDS_BY_CATEGORY:
       return {
         ...state,
-        Category: action.payload.Category, 
+        Category: action.payload.Category,
         filteredItems: action.payload.items,
       };
 

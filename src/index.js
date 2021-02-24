@@ -13,14 +13,13 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import promiseMiddleware from "redux-promise";
 import ParticlesBg from "particles-bg";
-import LandingPage   from "./components/views/LandingPage/landingPage";
+import LandingPage from "./components/views/LandingPage/landingPage";
 import ReduxThunk from "redux-thunk";
 
-const middleware = [thunk]; 
+const middleware = [thunk];
 
 const createStoreWithMiddleware = applyMiddleware(
-  
-  ...middleware, 
+  ...middleware,
   promiseMiddleware,
   ReduxThunk
 )(createStore);
@@ -39,7 +38,6 @@ ReactDOM.render(
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
-  
 );
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

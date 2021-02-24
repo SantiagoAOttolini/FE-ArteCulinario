@@ -18,12 +18,12 @@ class bar extends Component {
     const Bar = () => (
       <div className="col-md-4" key={reward._id}>
         <div className="mb-5 thumbnail listOfBenefits">
-            <img
-              className="rounded mr-2"
-              width="248"
-              height="180"
-              src={`http://localhost:5000/${reward.photo}`}
-            ></img>
+          <img
+            className="rounded mr-2"
+            width="248"
+            height="180"
+            src={`http://localhost:5000/${reward.photo}`}
+          ></img>
           <div className="mt-3">
             <button
               className="btnDelete mt-2 btn btn-danger btn-xs"
@@ -35,7 +35,11 @@ class bar extends Component {
         </div>
       </div>
     );
-    return <div className="listOfRewards"><Bar/></div>;
+    return (
+      <div className="listOfRewards">
+        <Bar />
+      </div>
+    );
   }
 }
 

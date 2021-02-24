@@ -2,20 +2,18 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteProduct, getProducts } from "../../../../_actions/product";
-import "./style.css"
+import "./style.css";
 
 class food extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   render() {
     const food = this.props.product;
     const foodItem = (
-      <div  key={food._id}>
+      <div key={food._id}>
         <div className="d-flex justify-content-center mb-5 mt-5">
           <img
             className="mr-2"

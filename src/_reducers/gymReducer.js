@@ -11,8 +11,8 @@ export default function (state = initialState, action) {
         ...state,
         items: action.payload,
       };
-      case ADD_GYM:
-        return { ...state, addGym: action.payload };
+    case ADD_GYM:
+      return { ...state, addGym: action.payload };
     default:
       return state;
   }

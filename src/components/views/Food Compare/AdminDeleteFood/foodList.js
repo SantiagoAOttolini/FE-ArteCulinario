@@ -12,7 +12,9 @@ class foodList extends Component {
     return (
       <>
         <div className="mt-4 d-flex justify-content-center">
-          <h3 className="titleDelete text-center rounded mb-2">Borrar alimentos</h3>
+          <h3 className="titleDelete text-center rounded mb-2">
+            Borrar alimentos
+          </h3>
         </div>
         <div className="containerImg container py-5">
           <div className="rowFood">

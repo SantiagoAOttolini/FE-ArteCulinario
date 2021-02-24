@@ -13,8 +13,6 @@ import {
   InputLabel,
 } from "@material-ui/core";
 import QRCode from "qrcode";
-import * as Yup from "yup";
-import QrReader from "react-qr-reader";
 
 function App() {
   const [text, setText] = useState("");
@@ -30,7 +28,6 @@ function App() {
       console.log(error);
     }
   };
-
 
   return (
     <div className="mt-5">

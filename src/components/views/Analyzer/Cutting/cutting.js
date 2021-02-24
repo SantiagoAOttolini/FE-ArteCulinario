@@ -1,81 +1,81 @@
-import React, { Component } from 'react'
-import Chart from '../Chart/chart'
-import Highcharts from 'highcharts'
-import MiniChart from '../MiniChart/mini_chart'
-import * as analyzerActions from '../../../../_actions/analyzer_actions'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { Component } from "react";
+import Chart from "../Chart/chart";
+import Highcharts from "highcharts";
+import MiniChart from "../MiniChart/mini_chart";
+import * as analyzerActions from "../../../../_actions/analyzer_actions";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 class Cutting extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   componentWillMount() {
-    this.props.actions.getProducts()
+    this.props.actions.getProducts();
   }
   render() {
-    const { products } = this.props
-    const bmrCalories = this.props.location.aboutProps
+    const { products } = this.props;
+    const bmrCalories = this.props.location.aboutProps;
     const options = {
       title: {
-        text: 'Calorias diarias'
+        text: "Calorias diarias",
       },
       tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
       },
       plotOptions: {
         pie: {
           allowPointSelect: true,
-          cursor: 'pointer',
+          cursor: "pointer",
           dataLabels: {
             enabled: true,
-            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            format: "<b>{point.name}</b>: {point.percentage:.1f} %",
             style: {
               color:
                 (Highcharts.theme && Highcharts.theme.contrastTextColor) ||
-                'black'
-            }
-          }
-        }
+                "black",
+            },
+          },
+        },
       },
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
-        type: 'pie'
+        type: "pie",
       },
       series: [
         {
-          name: 'Nutrients',
+          name: "Nutrients",
           colorByPoint: true,
           data: [
             {
-              name: 'Carbs',
-              y: 33
+              name: "Carbs",
+              y: 33,
             },
             {
-              name: 'Proteinas',
+              name: "Proteinas",
               y: 56,
               sliced: true,
-              selected: true
+              selected: true,
             },
             {
-              name: 'Grasas',
-              y: 7
+              name: "Grasas",
+              y: 7,
             },
             {
-              name: 'Vitaminas y minerales',
-              y: 4
-            }
-          ]
-        }
-      ]
-    }
+              name: "Vitaminas y minerales",
+              y: 4,
+            },
+          ],
+        },
+      ],
+    };
 
     const foodItems = products.map((food, index) => {
       return (
         <div
-          className='col-xs-12 col-sm-6 col-md-4 col-lg-3 go-eat-mini-chart thumbnail'
+          className="col-xs-12 col-sm-6 col-md-4 col-lg-3 go-eat-mini-chart thumbnail"
           key={index}
         >
           <MiniChart
@@ -85,94 +85,94 @@ class Cutting extends Component {
             fats={parseInt(food.grease1, 10)}
           />
         </div>
-      )
-    })
+      );
+    });
     return (
-      <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-xs-12 col-md-4 col-lg-6'>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-xs-12 col-md-4 col-lg-6">
             <h3>Ingesta diaria (Reduccion de grasas)</h3>
             <p>
-              {' '}
+              {" "}
               Cuando se trata de maximizar las ganancias de músculo magro
               mientras se reduce la grasa corporal muy rápidamente, debe seguir
-              una dieta estricta y un régimen de entrenamiento.{' '}
+              una dieta estricta y un régimen de entrenamiento.{" "}
             </p>
             <p>
-              {' '}
+              {" "}
               Esto implica hacer un seguimiento de sus macros y el momento en
-              que consume sus carbohidratos, proteínas y grasas saludables.{' '}
+              que consume sus carbohidratos, proteínas y grasas saludables.{" "}
             </p>
             <p>
-              {' '}
+              {" "}
               Este artículo le proveera informacion con el objetivo de que usted
               mantenga toda su masa muscular magra mientras pierde grasa
               corporal lentamente. Alcanzará su punto máximo en aproximadamente
-              8 semanas despues de un hábito alimenticio.{' '}
+              8 semanas despues de un hábito alimenticio.{" "}
             </p>
             <p>
-              {' '}
+              {" "}
               Si tiene alrededor del 12-14 % de grasa corporal, espere llegar a
               menos del 10 % de grasa corporal mientras mantiene toda su masa
               muscular magra después de 8 semanas de este régimen. Para lograr
               saber la cantidad de masa corporal de manera exacta previamente
-              deberá someterse a una antropometria realizada por un profesional.{' '}
+              deberá someterse a una antropometria realizada por un profesional.{" "}
             </p>
             <p>
-              {' '}
+              {" "}
               Si tiene alrededor del 10 % de grasa corporal, se estima que
               después de 8 semanas de seguir un régimen logrará un resultado
-              satisfactorio.{' '}
+              satisfactorio.{" "}
             </p>
             <br />
             <p>
-              {' '}
+              {" "}
               Dado que ha calculado las <b> calorías necesarias </b> en la
               página de inicio, las <b> {bmrCalories}</b> calorías es su
-              objetivo cada día en términos de ingesta calórica total.{' '}
+              objetivo cada día en términos de ingesta calórica total.{" "}
             </p>
             <p>
-              {' '}
+              {" "}
               Esta informacion de reduccion de grasas corporales le dará
               resultados tremendos sin sacrificar ninguna de sus ganancias de
-              músculo magro para las que ha entrenado tan duro.{' '}
+              músculo magro para las que ha entrenado tan duro.{" "}
             </p>
             <br />
             <p> Resumen rápido...¿cómo debería comer? </p>
             <ul>
               <li>
-                {' '}
+                {" "}
                 <strong> Carbohidratos: </strong> 1 gramo por kg de peso
-                corporal{' '}
+                corporal{" "}
               </li>
               <li>
-                {' '}
+                {" "}
                 <strong> Proteína: </strong> 1-1,25 gramos por kg de peso
-                corporal{' '}
+                corporal{" "}
               </li>
               <li>
-                {' '}
-                <strong> Grasa: </strong> 0,25 gramos por kg de peso corporal{' '}
+                {" "}
+                <strong> Grasa: </strong> 0,25 gramos por kg de peso corporal{" "}
               </li>
             </ul>
             <br></br>
             <h3>Alimentos recomendados por |Arte Culinario|</h3>
           </div>
-          <div className='col-xs-12 col-md-8 col-lg-6'>
+          <div className="col-xs-12 col-md-8 col-lg-6">
             <Chart options={options} />
           </div>
         </div>
-        <div className='row well'>{foodItems}</div>
+        <div className="row well">{foodItems}</div>
       </div>
-    )
+    );
   }
 }
 
 export default connect(
-  state => ({
-    products: state.product.products
+  (state) => ({
+    products: state.product.products,
   }),
-  dispatch => ({
-    actions: bindActionCreators(analyzerActions, dispatch)
+  (dispatch) => ({
+    actions: bindActionCreators(analyzerActions, dispatch),
   })
-)(Cutting)
+)(Cutting);

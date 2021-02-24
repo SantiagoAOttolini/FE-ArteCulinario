@@ -15,9 +15,10 @@ class RewardList extends Component {
             this.props.rewards.map((reward) => (
               <Reward key={reward._id} Reward={reward} />
             ))}
-        </div>
+        </div> 
       </div>
     );
+    
     return <RewardListConst />;
   }
 }

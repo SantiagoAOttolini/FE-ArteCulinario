@@ -29,14 +29,30 @@ function AddFood(props) {
       validationSchema={Yup.object().shape({
         photo: Yup.string().required("Una foto es requerida"),
         name: Yup.string().required("El nombre es requerido"),
-        valor: Yup.string().required("El valor energetico es requerido"),
-        carbs: Yup.string().required("El valor del carboidrato es requerido"),
-        protein: Yup.string().required("El valor de la proteina es requerido"),
-        grease1: Yup.string().required("El valor de la grasa es requerido"),
-        grease2: Yup.string().required("El valor de la grasa es requerido"),
-        grease3: Yup.string().required("El valor de la grasa es requerido"),
-        fiber: Yup.string().required("El valor de la fibra es requerido"),
-        sodium: Yup.string().required("El valor del sodio es requerido"),
+        valor: Yup.number()
+          .required("El valor energetico es requerido")
+          .typeError("Solo se permiten numeros"),
+        carbs: Yup.number()
+          .required("El valor del carboidrato es requerido")
+          .typeError("Solo se permiten numeros"),
+        protein: Yup.number()
+          .required("El valor de la proteina es requerido")
+          .typeError("Solo se permiten numeros"),
+        grease1: Yup.number()
+          .required("El valor de la grasa es requerido")
+          .typeError("Solo se permiten numeros"),
+        grease2: Yup.number()
+          .required("El valor de la grasa es requerido")
+          .typeError("Solo se permiten numeros"),
+        grease3: Yup.number()
+          .required("El valor de la grasa es requerido")
+          .typeError("Solo se permiten numeros"),
+        fiber: Yup.number()
+          .required("El valor de la fibra es requerido")
+          .typeError("Solo se permiten numeros"),
+        sodium: Yup.number()
+          .required("El valor del sodio es requerido")
+          .typeError("Solo se permiten numeros"),
         adventages: Yup.string().required(
           "Debe escribir las ventajas del alimento"
         ),
@@ -90,7 +106,9 @@ function AddFood(props) {
         return (
           <div className="mt-5 d-flex justify-content-center flex-column">
             <div className="mb-4 d-flex justify-content-center">
-              <h2 className="titleAddFood text-center rounded mb-2">Agregar alimento</h2>
+              <h2 className="titleAddFood text-center rounded mb-2">
+                Agregar alimento
+              </h2>
             </div>
             <div className="d-flex justify-content-center">
               <Form className="w-25" onSubmit={handleSubmit}>

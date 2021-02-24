@@ -7,18 +7,18 @@ class GymList extends Component {
   componentDidMount() {
     this.props.fetchGyms();
   }
-  
+
   render() {
     const GymListConst = () => (
       <div className="mr-5 ml-5 containerImg">
         <div className="mt-4 d-flex justify-content-center">
-          <h3 className="titleDelete mt-2 text-center rounded mb-2">Gimnacios</h3>
+          <h3 className="titleDelete mt-2 text-center rounded mb-2">
+            Gimnacios
+          </h3>
         </div>
         <div className="rowBenefit">
           {this.props.gyms &&
-            this.props.gyms.map((gym) => (
-              <Gym key={gym._id} Gym={gym} />
-            ))}
+            this.props.gyms.map((gym) => <Gym key={gym._id} Gym={gym} />)}
         </div>
       </div>
     );
@@ -31,5 +31,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-    fetchGyms,
+  fetchGyms,
 })(GymList);

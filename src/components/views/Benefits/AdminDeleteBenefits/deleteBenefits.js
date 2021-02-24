@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BarList from "./barList"
+import BarList from "./barList";
 import { connect } from "react-redux";
 import { fetchRewards } from "../../../../_actions/rewards_actions";
 
@@ -10,7 +10,7 @@ class deleteFood extends Component {
   render() {
     return (
       <>
-       <BarList/>
+        <BarList />
       </>
     );
   }

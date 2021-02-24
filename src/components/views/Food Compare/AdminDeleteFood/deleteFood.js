@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FoodList from "./foodList"
+import FoodList from "./foodList";
 import { connect } from "react-redux";
 import { getProducts } from "../../../../_actions/product";
 
@@ -10,7 +10,7 @@ class deleteFood extends Component {
   render() {
     return (
       <>
-       <FoodList/>
+        <FoodList />
       </>
     );
   }

@@ -1,60 +1,60 @@
-import React, { Component } from 'react'
-import Chart from '../Chart/chart'
+import React, { Component } from "react";
+import Chart from "../Chart/chart";
 
 class MiniChart extends Component {
   render() {
     const options = {
       chart: {
-        type: 'column'
+        type: "column",
       },
       title: {
-        text: this.props.name
+        text: this.props.name,
       },
       subtitle: {
-        text: null
+        text: null,
       },
       xAxis: {
-        categories: [''],
-        crosshair: true
+        categories: [""],
+        crosshair: true,
       },
       yAxis: {
         min: 0,
         title: {
-          text: ' (gm)'
-        }
+          text: " (gm)",
+        },
       },
       tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat:
           '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
           '<td style="padding:0"><b>{point.y:.1f} gm</b></td></tr>',
-        footerFormat: '</table>',
+        footerFormat: "</table>",
         shared: true,
-        useHTML: true
+        useHTML: true,
       },
       plotOptions: {
         column: {
           pointPadding: 0.2,
-          borderWidth: 0
-        }
+          borderWidth: 0,
+        },
       },
       series: [
         {
-          name: 'Carbs',
-          data: [this.props.carbohydrates]
+          name: "Carbs",
+          data: [this.props.carbohydrates],
         },
         {
-          name: 'Proteinas',
-          data: [this.props.proteins]
+          name: "Proteinas",
+          data: [this.props.proteins],
         },
         {
-          name: 'Grasas',
-          data: [this.props.fats]
-        }
-      ]
-    }
-    return <Chart options={options} />
+          name: "Grasas",
+          data: [this.props.fats],
+        },
+      ],
+    };
+    return <Chart options={options} />;
   }
 }
 
-export default MiniChart
+export default MiniChart;

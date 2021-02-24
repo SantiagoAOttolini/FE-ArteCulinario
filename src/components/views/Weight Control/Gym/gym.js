@@ -9,23 +9,23 @@ export default class Gym extends Component {
       <div className="d-flex justify-content-center">
         <div className="mt-5 mb-5  listOfBenefits">
           <img
-          className="rounded"
-          src={`http://localhost:5000/${gym.photo}`}
-          alt="photo"
-          width="250"
-          height="200"
-        />
-        <div className="mt-4 d-flex justify-content-center">
-          <Link to={`/gym/${gym._id}`}>
-            <button className="ml-3 btn btn-info  text-white rounded h5">
-              Ver informacion
-            </button>
-          </Link>
-        </div>
+            className="rounded"
+            src={`http://localhost:5000/${gym.photo}`}
+            alt="photo"
+            width="250"
+            height="200"
+          />
+          <div className="mt-4 d-flex justify-content-center">
+            <Link to={`/gym/${gym._id}`}>
+              <button className="ml-3 btn btn-info  text-white rounded h5">
+                Ver informacion
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );
 
-    return <Gym/>;
+    return <Gym />;
   }
 }

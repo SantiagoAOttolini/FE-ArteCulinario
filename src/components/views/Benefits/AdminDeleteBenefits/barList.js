@@ -24,7 +24,7 @@ class barList extends Component {
         </div>
       </div>
     );
-    return <BarList/>;
+    return <BarList />;
   }
 }
 

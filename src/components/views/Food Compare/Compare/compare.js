@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import ReactHTMLTableToExcel from "react-html-table-to-excel"
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
-const Compare = ({products}) => (
+const Compare = ({ products }) => (
   <div className="row compare">
     <div className="col-12 mt-5 text-center">
       <table className="table" id="tablaAlimentos">
@@ -86,24 +86,28 @@ const Compare = ({products}) => (
               <td key={product.id} className="text-center">
                 {product.information}{" "}
                 <div className="btn btn-info">
-                <Link className="informacionAlimento text-light" to={ `/information/${product._id}`}> Ver informacion</Link>
+                  <Link
+                    className="informacionAlimento text-light"
+                    to={`/information/${product._id}`}
+                  >
+                    {" "}
+                    Ver informacion
+                  </Link>
                 </div>
-                 
               </td>
             ))}
           </tr>
         </tbody>
-        
       </table>
       <div className="d-flex justify-content-center mt-3 mb-3">
-            <ReactHTMLTableToExcel
-            className="btn btn-success"
-             table="tablaAlimentos"
-             filename="Planilla"
-             sheet="pagina 1"
-             buttonText="Generar planilla"
-            />
-        </div>
+        <ReactHTMLTableToExcel
+          className="btn btn-success"
+          table="tablaAlimentos"
+          filename="Planilla"
+          sheet="pagina 1"
+          buttonText="Generar planilla"
+        />
+      </div>
     </div>
   </div>
 );

@@ -19,3 +19,9 @@
     color: white;
    
   }
+  @media (max-width: 428px) {
+    .containerImg {
+        width: 330px;
+        font-size: 1.3em;
+    }
+}

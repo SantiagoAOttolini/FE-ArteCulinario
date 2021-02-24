@@ -13,6 +13,6 @@ export const getProducts = () => (dispatch) =>
 export const get_bmr = (bmr) => (dispatch) => {
   return dispatch({
     type: types.GET_BMR,
-    payload: bmr ,
+    payload: bmr,
   });
 };

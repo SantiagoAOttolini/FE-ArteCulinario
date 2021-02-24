@@ -4,4 +4,4 @@ import ProductList from "./ProductList/productList";
 import App from "../../../Container/app";
 import Home from "./Home/home";
 
-export { Compare, Product, ProductList, Home, App};
+export { Compare, Product, ProductList, Home, App };

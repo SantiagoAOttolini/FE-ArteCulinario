@@ -54,9 +54,7 @@ class Index extends Component {
         </form>
         <Departure data={this.state} />
         <div className="d-flex justify-content-center">
-          <Link
-            to={"/gym"}
-          >
+          <Link to={"/gym"}>
             <button className="btn btn-info">Gimnasios asociados</button>
           </Link>
         </div>
