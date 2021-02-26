@@ -69,35 +69,36 @@ class SingleGym extends Component {
     const GymsInformations = () => (
       <div className="container mt-3">
         <div className="d-flex justify-content-center">
-          <h4 className="titleBenefits text-center rounded mt-3">{gym.name}</h4>
+          <h4 className="titleGymName text-center rounded mt-3">{gym.name}</h4>
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="mt-3 mb-5 d-flex justify-content-center">
           <img
+          className="gymPhoto"
             src={`http://localhost:5000/${gym.photo}`}
             style={{ maxHeight: "30rem" }}
             alt="gym"
           />
         </div>
         <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">Telefono</h4>
+          <h4 className="titleGymPhone text-center rounded">Telefono</h4>
         </div>
         <div className="d-flex justify-content-center">
           <h5>{gym.phone}</h5>
         </div>
         <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">Mail</h4>
+          <h4 className="titleGymMail text-center rounded">Mail</h4>
         </div>
         <div className="d-flex justify-content-center">
           <h5>{gym.email}</h5>
         </div>
         <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">Direccion</h4>
+          <h4 className="titleGymDirection text-center rounded">Direccion</h4>
         </div>
         <div className="d-flex justify-content-center">
           <h5>{gym.adress}</h5>
         </div>
         <div className="d-flex justify-content-center mt-2">
-          <h4 className="text-center rounded titleAtributtes">Precio</h4>
+          <h4 className="titleGymPrice text-center rounded">Precio</h4>
         </div>
         <div className="d-flex justify-content-center">
           <h5>{gym.price}</h5>

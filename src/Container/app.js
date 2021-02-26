@@ -53,7 +53,7 @@ class App extends Component {
             <Route
               exact
               path="/information/:id"
-              component={Auth(Information, true)}
+              component={Auth(Information, null)}
             />
             <Route exact path="/qrverify" component={Auth(QRverify, null)} />
             <Route exact path="/addFood" component={Auth(AddFood, true)} />

@@ -61,8 +61,8 @@ function AddCashPays(props) {
         } = props;
         return (
           <div className="mt-5 d-flex justify-content-center flex-column">
-            <div className="mb-4 d-flex justify-content-center">
-              <h2 className="text-center">Agregar un pago</h2>
+            <div className="container rounded titlePrice mb-4 d-flex justify-content-center">
+              <h2 className="text-white text-center">Agregar un pago</h2>
             </div>
             <div className="d-flex justify-content-center">
               <Form className="w-25" onSubmit={handleSubmit}>

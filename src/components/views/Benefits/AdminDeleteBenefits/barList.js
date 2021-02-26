@@ -14,7 +14,7 @@ class barList extends Component {
         <div className="mt-5 d-flex justify-content-center">
           <h3 className="titleDelete rounded text-center">Borrar locales</h3>
         </div>
-        <div className="containerImg container py-5">
+        <div className="container py-5">
           <div className="rowReward">
             {this.props.rewards &&
               this.props.rewards.map((reward) => (

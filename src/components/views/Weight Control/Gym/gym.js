@@ -9,7 +9,7 @@ export default class Gym extends Component {
       <div className="d-flex justify-content-center">
         <div className="mt-5 mb-5  listOfBenefits">
           <img
-            className="rounded"
+            className="containerImgGym rounded"
             src={`http://localhost:5000/${gym.photo}`}
             alt="photo"
             width="250"

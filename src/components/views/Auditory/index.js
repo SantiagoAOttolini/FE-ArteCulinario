@@ -79,8 +79,9 @@ function Auditory() {
     <div>
       <div>
         <div>
-          <div className="mt-3 d-flex justify-content-center">
-            <h1>|Auditoria Tarjeta de credito|</h1>
+          <br></br>
+          <div className="mb-5 mt-3 titleTarjeta container rounded mt-3 d-flex justify-content-center">
+            <h1 className="text-white">|Auditoria Tarjeta de credito|</h1>
           </div>
 
           <div className="d-flex justify-content-center">
@@ -101,8 +102,8 @@ function Auditory() {
               para poder visualizar la auditoria completa.
             </h5>
           </div>
-          <div className="mt-5 d-flex justify-content-center">
-            <h1>|Auditoria Mercado pago|</h1>
+          <div className="mb-5 titleMercadoPago container rounded mt-5 d-flex justify-content-center">
+            <h1 className="text-white" >|Auditoria Mercado pago|</h1>
           </div>
           <div className="d-flex justify-content-center">
             <table className="tableAuditory ml-5 mr-5">
@@ -129,8 +130,8 @@ function Auditory() {
             </table>
           </div>
         </div>
-        <div className="mt-5 d-flex justify-content-center">
-          <h1>|Auditoria login|</h1>
+        <div className="mb-5 titleLogin container rounded mt-5 d-flex justify-content-center">
+          <h1 className="text-white" >|Auditoria login|</h1>
         </div>
         <div className="d-flex justify-content-center">
           <table className="tableAuditory ml-5 mr-5">
@@ -153,6 +154,7 @@ function Auditory() {
             <tbody>{renderCards}</tbody>
           </table>
         </div>
+        <br></br>
       </div>
     </div>
   );

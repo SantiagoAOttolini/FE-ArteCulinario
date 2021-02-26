@@ -75,7 +75,7 @@ function AddReward(props) {
         return (
           <div className="mt-5 d-flex justify-content-center flex-column">
             <div className="mb-4 d-flex justify-content-center">
-              <h2 className="titleRewards text-center rounded mb-2">
+              <h2 className="text-white titleRewards text-center rounded mb-2">
                 Agregar local de gastronomia
               </h2>
             </div>

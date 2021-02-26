@@ -16,7 +16,7 @@ class foodList extends Component {
             Borrar alimentos
           </h3>
         </div>
-        <div className="containerImg container py-5">
+        <div className="container py-5">
           <div className="rowFood">
             {this.props.products &&
               this.props.products.map((product) => (

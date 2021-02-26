@@ -16,9 +16,9 @@ class food extends Component {
       <div key={food._id}>
         <div className="d-flex justify-content-center mb-5 mt-5">
           <img
-            className="mr-2"
-            width="248"
-            height="180"
+            className="containerImg mr-2"
+            width="300"
+            height="250"
             src={`http://localhost:5000/${food.photo}`}
           ></img>
         </div>

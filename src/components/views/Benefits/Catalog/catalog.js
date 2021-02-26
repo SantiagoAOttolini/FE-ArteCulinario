@@ -12,7 +12,7 @@ const TitleCatalog = () => (
   </div>
 );
 const ContainerFilter = () => (
-  <div>
+  <div className="filter">
     <Filter />
   </div>
 );

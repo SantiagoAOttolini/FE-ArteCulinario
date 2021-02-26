@@ -39,8 +39,7 @@ class Informacion extends Component {
   render() {
     const product = this.state.product;
     const id = this.state.product.id;
-    console.log(product.adventages);
-    /* const adventages = product.adventages && product.adventages.split("-");  */
+    const adventages = product.adventages && product.adventages.split("-");
 
     return (
       <div className="infoAlimentos">
@@ -57,7 +56,18 @@ class Informacion extends Component {
           <h4 className="titleAdventages text-center rounded">Ventajas</h4>
         </div>
         <div className="textAdventages container d-flex justify-content-center">
-          <h5>{product.adventages}</h5>
+        <ul>
+            {adventages &&
+              adventages.map((item, index) => {
+                return (
+                  <li className='h5 text-dark' key={index}>
+                    {item}
+                  </li>
+                )
+              })}
+          </ul>
+
+         {/* <h5>{adventages}</h5> */}
         </div>
         <div className="mt-5 d-flex justify-content-center">
           <h4 className="titleCategory text-center rounded">Categoria</h4>
