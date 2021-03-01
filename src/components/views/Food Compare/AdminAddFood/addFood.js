@@ -78,7 +78,7 @@ function AddFood(props) {
             description: values.description,
             Category: values.Category,
           };
-
+        //React hooks in functional component
           dispatch(addFood(dataToSubmit)).then((response) => {
             if (response.payload.success) {
               props.history.push("/");

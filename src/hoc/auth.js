@@ -23,6 +23,8 @@ export default function (SpecificComponent, option, adminRoute = null) {
             props.history.push("/");
           }
           //Logged in Status, but Try to go into log in page
+
+          //Entrar a componentes que no se necesita entrar una vez que se esta logueado, ej, formulario login
           else {
             if (option === false) {
               props.history.push("/");

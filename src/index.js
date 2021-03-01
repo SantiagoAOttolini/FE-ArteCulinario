@@ -12,12 +12,9 @@ import Reducer from "./_reducers";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import promiseMiddleware from "redux-promise";
-import ParticlesBg from "particles-bg";
-import LandingPage from "./components/views/LandingPage/landingPage";
 import ReduxThunk from "redux-thunk";
 
 const middleware = [thunk];
-
 const createStoreWithMiddleware = applyMiddleware(
   ...middleware,
   promiseMiddleware,

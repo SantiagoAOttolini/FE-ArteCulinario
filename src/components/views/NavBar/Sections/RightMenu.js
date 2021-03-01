@@ -12,6 +12,7 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 function RightMenu(props) {
+  //acceder a los datos del estado (mapStateToProps)
   const user = useSelector((state) => state.user);
 
   const userAuditory = () => {

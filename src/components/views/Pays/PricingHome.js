@@ -47,24 +47,30 @@ const PricingHome = (props) => {
         <h3>Oferta exclusiva: {product.price} USD</h3>
       </div>
       <div className="mt-3 container imgPrice"></div>
+      {user.userData && !user.userData.accountType === "Cuenta Premium" ? (
+        <div>
+          <div className="btnPagar d-flex justify-content-center">
+            <StripeCheckout
+              className="mt-4 w-25"
+              label="Tarjeta de credito"
+              stripeKey="pk_test_51IB2toIHFmBhTQLtHrSppZKrAtzBBx2H5DMU1oPetaXulzyi5BJQrVq3YzANFrYOfp2FocnbP4LwA2uL1E3dHPvV00ERf1p4tQ"
+              token={handleToken}
+              amount={product.price * 100}
+              name="|Arte Culinario Premium|"
+              billingAddress
+            />
+          </div>
 
-      <div className="btnPagar d-flex justify-content-center">
-        <StripeCheckout
-          className="mt-4 w-25"
-          label="Tarjeta de credito"
-          stripeKey="pk_test_51IB2toIHFmBhTQLtHrSppZKrAtzBBx2H5DMU1oPetaXulzyi5BJQrVq3YzANFrYOfp2FocnbP4LwA2uL1E3dHPvV00ERf1p4tQ"
-          token={handleToken}
-          amount={product.price * 100}
-          name="|Arte Culinario Premium|"
-          billingAddress
-        />
-      </div>
+          <div className="d-flex justify-content-center">
+            <a className="mt-4 w-25 text-info" href="https://mpago.la/174uCAQ">
+              <button className="btnMercadoPago rounded">Mercado pago</button>
+            </a>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
 
-      <div className="d-flex justify-content-center">
-        <a className="mt-4 w-25 text-info" href="https://mpago.la/174uCAQ">
-          <button className="btnMercadoPago rounded">Mercado pago</button>
-        </a>
-      </div>
       <br></br>
       <div className="contactText container">
         <div className="d-flex justify-content-center">
@@ -83,9 +89,7 @@ const PricingHome = (props) => {
       <br></br>
       <div className="contactText2 container mb-5">
         <div className="d-flex justify-content-center">
-          <p className="h4 mt-5 font-weight-bold">
-            El mail debe contener
-          </p>
+          <p className="h4 mt-5 font-weight-bold">El mail debe contener</p>
         </div>
 
         <div className="d-flex justify-content-center">
