@@ -1,7 +1,6 @@
 import React, { Suspense, Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Auth from "../hoc/auth";
-// pages for this product
 import LandingPage from "../components/views/LandingPage/landingPage.js";
 import RegisterPage from "../components/views/Security Model/Register page/registerPage";
 import NavBar from "../components/views/NavBar/NavBar";

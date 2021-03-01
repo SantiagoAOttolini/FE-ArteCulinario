@@ -20,7 +20,6 @@ function App() {
   const classes = useStyles();
 
   const generateQrCode = async () => {
-    /* textValidation=["Combo uno","Combo dos", "Combo tres", "Combo cuatro", "Combo cinco"] */
     try {
       const response = await QRCode.toDataURL(text);
       setImageUrl(response);
@@ -50,11 +49,6 @@ function App() {
                       <MenuItem value={"Combo cinco"}>Combo cinco</MenuItem>
                     </Select>
                   </FormControl>
-
-                  {/*  <TextField
-                  label="Escribe el texto aqui"
-                  onChange={(e) => setText(e.target.value)}
-                /> */}
                   <div className="d-flex justify-content-center">
                     <Button
                       className={classes.btn}
@@ -75,28 +69,6 @@ function App() {
                   </div>
                 </Grid>
               </div>
-              {/*  <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
-                        <Button className={classes.btn} variant="contained" color="secondary" onClick={onScanFile}>Escanear codigo QR</Button>
-                        <QrReader
-                          ref={qrRef}
-                          delay={300}
-                          style={{width: '100%'}}
-                          onError={handleErrorFile}
-                          onScan={handleScanFile}
-                          legacyMode
-                        />
-                        <h4>Codigo escaneado: {scanResultFile}</h4>
-                      </Grid> */}
-              {/*  <Grid item xl={4} lg={4} md={6} sm={12} xs={12}>
-                         <h4>Escanear codigo a travez de la Web Cam</h4>
-                         <QrReader
-                         delay={300}
-                         style={{width: '100%'}}
-                         onError={handleErrorWebCam}
-                         onScan={handleScanWebCam}
-                         />
-                         <h4>Codigo escaneado: {scanResultWebCam}</h4>
-                      </Grid> */}
             </Grid>
           </CardContent>
         </Card>

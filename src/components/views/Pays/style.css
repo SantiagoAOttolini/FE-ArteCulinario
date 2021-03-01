@@ -4,14 +4,7 @@
   height: 600px;
   box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
 }
-.titlePrice{
-  width: 500px;
-  height:50px;
-  border: none;
-  background-color:  rgb(125, 190, 228);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
-}
+
 .contactText, .contactText2{
   box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);
   background-color:  rgb(129, 175, 201);
@@ -27,7 +20,7 @@ height:200px
   background-color:  rgb(125, 190, 228);
 }
 .titlePrice{
-  width: 350px;
+  width: 380px;
   height: 45px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   box-shadow: 5px 5px 6px 5px rgb(122, 121, 121);

@@ -89,7 +89,6 @@ class HomePage extends React.Component {
 
     return (
       //here we control the displaying of our calculations
-
       <div>
         <div className="mt-4"></div>
         <div className=" ml-4 mr-4 mb-5">

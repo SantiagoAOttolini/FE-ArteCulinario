@@ -84,7 +84,6 @@ function RadioButtonField(props) {
                 </RadioGroup>
               </FormControl>
             </Grid>
-
             <Grid item xs={6}>
               <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend">Ejercicio fisico</FormLabel>

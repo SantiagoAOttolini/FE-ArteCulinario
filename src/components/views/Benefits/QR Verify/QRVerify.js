@@ -29,14 +29,6 @@ function QRVerify() {
   const onScanFile = () => {
     qrRef.current.openImageDialog();
   };
-  const handleErrorWebCam = (error) => {
-    console.log(error);
-  };
-  const handleScanWebCam = (result) => {
-    if (result) {
-      setScanResultWebCam(result);
-    }
-  };
   return (
     <div className="mt-5">
       <Container className={classes.conatiner}>

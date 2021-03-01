@@ -1,7 +1,3 @@
-/**
- * the "label" is how the radio button labels will display
- */
-
 const UNITS = [
   {
     label: "kg / cm",

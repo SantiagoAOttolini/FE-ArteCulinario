@@ -6,8 +6,8 @@ function WeightEntry(props) {
   const { classes, handleChange } = props;
 
   return (
-    /**
-     * these allow you to create input fields
+    /*
+     these allow you to create input fields
      */
     <div className={classes.root}>
       <div className="mr-4 ml-4">

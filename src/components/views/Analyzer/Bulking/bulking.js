@@ -18,7 +18,6 @@ class Bulking extends Component {
   render() {
     const { products } = this.props;
     const bmrCalories = this.props.location.aboutProps;
-    /* const { state } = useLocation(); */
     console.log(bmrCalories);
     const foodItems = products.map((food, index) => {
       return (
