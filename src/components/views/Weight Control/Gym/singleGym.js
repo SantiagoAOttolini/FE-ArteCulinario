@@ -73,7 +73,7 @@ class SingleGym extends Component {
         </div>
         <div className="mt-3 mb-5 d-flex justify-content-center">
           <img
-          className="gymPhoto"
+            className="gymPhoto"
             src={`http://localhost:5000/${gym.photo}`}
             style={{ maxHeight: "30rem" }}
             alt="gym"
@@ -118,14 +118,31 @@ class SingleGym extends Component {
         </div>
         <div className="mt-3 d-flex justify-content-center">
           <h4>
-            {this.state.total !== 0 ? <div>{"$" + this.state.total}</div> : ""}
+            {this.state.total !== 0 ? (
+              <div>
+                <div className="d-flex justify-content-center">
+                  {"$" + this.state.total}{" "}
+                </div>
+                <div className="d-flex justify-content-center">
+                  {
+                    <Link to="/benefitsGym" id="btnBenefit">
+                      <button className="mt-5 btn btn-info  text-white rounded h5">
+                        Obtener beneficio
+                      </button>
+                    </Link>
+                  }
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </h4>
         </div>
 
         <div className="d-flex justify-content-center">
           {
             <Link to="/" id="btnVolver">
-              <button className="mt-5 btn btn-info  text-white rounded h5">
+              <button className="mt-2 btn btn-info  text-white rounded h5">
                 Volver
               </button>
             </Link>

@@ -47,7 +47,7 @@ const PricingHome = (props) => {
         <h3>Oferta exclusiva: {product.price} USD</h3>
       </div>
       <div className="mt-3 container imgPrice"></div>
-      {user.userData && !user.userData.accountType === "Cuenta Premium" ? (
+      {user.userData && !user.userData.accountType !== "Cuenta Premium" ? (
         <div>
           <div className="btnPagar d-flex justify-content-center">
             <StripeCheckout

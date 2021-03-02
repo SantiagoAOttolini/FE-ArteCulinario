@@ -21,6 +21,7 @@ import AddGym from "../components/views/Benefits/AdminAddGym/adminAddGym";
 import AddReward from "../components/views/Benefits/AdminAddRewards/adminAddReward";
 import Auditory from "../components/views/Auditory/index";
 import Benefits from "../components/views/Benefits/Benefits/benefits";
+import BenefitsGym from "../components/views/Weight Control/Gym/benefits";
 import QRverify from "../components/views/Benefits/QR Verify/QRVerify";
 import DeleteFood from "../components/views/Food Compare/AdminDeleteFood/deleteFood";
 import DeleteReward from "../components/views/Benefits/AdminDeleteBenefits/deleteBenefits";
@@ -64,6 +65,7 @@ class App extends Component {
               component={Auth(DeleteFood, true)}
             />
             <Route exact path="/benefits" component={Auth(Benefits, true)} />
+            <Route exact path="/benefitsGym" component={Auth(BenefitsGym, true)} />
             <Route
               exact
               path="/deleteReward"
